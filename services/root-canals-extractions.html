@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Root Canals & Extractions | Zent Family Dentistry</title>
+  <meta name="description" content="Endodontic care, oral surgery, and pain management at Zent Family Dentistry in South Bend, Indiana. Saving natural teeth when possible with gentle, effective treatment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --sage: #4a8bb3;
+      --sage-deep: #3c7aa0;
+      --sage-light: #e6f0f6;
+      --cream: #f2f7fa;
+      --blush: #e6f0f6;
+      --blush-light: #f0f5f8;
+      --warm-white: #f9fbfc;
+      --text-dark: #262c2f;
+      --text-mid: #525a5e;
+      --text-light: #666c70;
+      --accent: #cbd5d9;
+      --accent-text: #a2aeb3;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'Outfit', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--warm-white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+      transition: background .4s, box-shadow .4s, padding .4s;
+    }
+    .nav.scrolled { padding: 0.8rem 3rem; }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo-img { height: 72px; width: auto; transition: opacity .3s; }
+    .nav-logo-img:hover { opacity: 0.8; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      letter-spacing: 0.02em;
+      transition: color .3s;
+    }
+    .nav-links a:hover { color: var(--sage-deep); }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--sage-deep);
+      color: #fff !important;
+      padding: 0.7rem 1.6rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: background .3s, transform .3s;
+    }
+    .nav-cta:hover { background: var(--sage); transform: translateY(-1px); }
+
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--sage-deep);
+      margin: 5px 0;
+      transition: .3s;
+      border-radius: 2px;
+    }
+
+    /* ===== HERO BANNER ===== */
+    .hero-banner {
+      background: var(--sage-deep);
+      color: #fff;
+      padding: 8rem 0 3rem;
+      text-align: center;
+    }
+    .hero-banner h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .hero-banner p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ===== CONTENT SECTION ===== */
+    .content-section {
+      padding: 6rem 0;
+      background: #fff;
+    }
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .content-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+    .content-text h2 em {
+      font-style: italic;
+      color: var(--sage-deep);
+    }
+    .content-text p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 1.2rem;
+    }
+    .content-text ul {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+    .content-text ul li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+      color: var(--text-mid);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+    .content-text ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+      width: 8px;
+      height: 8px;
+      background: var(--sage);
+      border-radius: 50%;
+    }
+    .content-image {
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--sage-light);
+      aspect-ratio: 4/3;
+    }
+
+    /* ===== BENEFITS GRID ===== */
+    .benefits-section {
+      padding: 6rem 0;
+      background: var(--cream);
+    }
+    .benefits-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .benefits-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      line-height: 1.2;
+      color: var(--text-dark);
+    }
+    .benefits-header h2 em {
+      font-style: italic;
+      color: var(--sage-deep);
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .benefit-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    }
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--sage-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .benefit-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--sage-deep);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .benefit-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      color: var(--text-dark);
+    }
+    .benefit-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      padding: 6rem 0;
+      background: var(--sage-deep);
+      text-align: center;
+      color: #fff;
+    }
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      opacity: 0.9;
+      max-width: 550px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fff;
+      color: var(--sage-deep);
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--text-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 5rem 0 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+    .footer-brand .footer-logo { margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.7; font-weight: 300; max-width: 300px; }
+    .footer h4, .footer .footer-heading {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 1.2rem;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.7rem; }
+    .footer-links a {
+      font-size: 0.9rem;
+      font-weight: 300;
+      transition: color .3s;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+    .footer-contact-item svg { flex-shrink: 0; margin-top: 2px; opacity: 0.5; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s cubic-bezier(0.16, 1, 0.3, 1), transform .8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+      .nav {
+        padding: 0.85rem 1.25rem;
+        background: rgba(255,255,255,0.97);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+      }
+      .nav.scrolled { padding: 0.75rem 1.25rem; }
+      .nav-logo-img { height: 52px; }
+      .nav-cta { display: none; }
+      .nav-toggle { display: block; position: relative; z-index: 200; }
+      .nav-toggle.open span:nth-child(1) { transform: translate(0, 7px) rotate(45deg); }
+      .nav-toggle.open span:nth-child(2) { opacity: 0; }
+      .nav-toggle.open span:nth-child(3) { transform: translate(0, -7px) rotate(-45deg); }
+      .nav-links {
+        display: flex;
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        background: #fff;
+        padding: 5.5rem 1.5rem 2rem;
+        gap: 0;
+        list-style: none;
+        max-height: 100vh;
+        overflow-y: auto;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform .35s ease, opacity .25s, visibility .25s;
+        pointer-events: none;
+        z-index: 99;
+      }
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+      .nav-links > .nav-logo { display: none; }
+      .nav-links li { width: 100%; border-bottom: 1px solid rgba(0,0,0,0.06); }
+      .nav-links li:last-child { border-bottom: 0; }
+      .nav-links li > a { display: block; padding: 1rem 0.25rem; font-size: 1.05rem; }
+      .container { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .content-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .hero-banner { padding: 7rem 2rem 2.5rem; }
+      .footer { padding: 3rem 0 1.5rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 600px) {
+      .benefits-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+    /* ===== ACCESSIBILITY ===== */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--sage-deep);
+      color: #fff;
+      padding: 0.75rem 1.25rem;
+      z-index: 1000;
+      border-radius: 0 0 8px 0;
+      font-weight: 500;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 0; outline: 3px solid #fff; outline-offset: -3px; }
+    a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
+      outline: 3px solid var(--sage-deep);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    .footer a:focus-visible { outline-color: #fff; }
+    .form-required-note {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      margin: 0 0 1rem;
+      font-weight: 300;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .marquee-row { animation: none !important; }
+      .reveal, .stagger-children > * { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav-logo"><img src="../assets/logo/2b226c_219e7198a8464dc08dbd784a24859bc6.avif" alt="Zent Family Dentistry" class="nav-logo-img"></a>
+    <ul class="nav-links" id="nav-links-list">
+      <li><a href="../our-practice.html">Our Practice</a></li>
+      <li><a href="../index.html#services">Services</a></li>
+      <li><a href="../our-practice.html#doctors">Doctors</a></li>
+      <li><a href="../index.html#testimonials">Testimonials</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../index.html#appointment" class="nav-cta">Request Appointment</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links-list">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main id="main-content">
+
+  <!-- HERO BANNER -->
+  <section class="hero-banner">
+    <div class="container">
+      <h1>Extractions &amp; Root Canals</h1>
+      <p>Simple, surgical, and root-tip extractions plus endodontic care &mdash; performed in-office or referred to a specialist depending on the tooth.</p>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid reveal">
+        <div class="content-text">
+          <h2>Teeth aren&rsquo;t pulled &mdash; they&rsquo;re <em>carefully</em> removed</h2>
+          <p>Contrary to popular belief, teeth aren&rsquo;t &ldquo;pulled.&rdquo; They&rsquo;re removed by carefully and systematically applying controlled force and pressure in different directions until the tooth comes loose. We perform three types of extractions depending on the tooth and its condition.</p>
+          <p><strong>Simple extractions</strong> are performed on teeth that are visible in the mouth, typically loosened with an elevator before being lifted out with forceps. <strong>Surgical extractions</strong> involve teeth that are compromised, broken, severely decayed, or have not fully erupted &mdash; sometimes requiring an incision or splitting the tooth into pieces for easier removal. <strong>Root tip extractions</strong> involve teeth that have broken at or below the gum line.</p>
+          <p>There are many reasons a tooth might need to be removed: severe decay, infection, gum disease, fracture, impaction, preparation for orthodontics, or teeth that simply can&rsquo;t be restored with root canal treatment. Some extractions are performed here at Zent Family Dentistry, and others are referred to an oral surgeon &mdash; we&rsquo;ll always recommend the path that&rsquo;s right for your tooth.</p>
+          <ul>
+            <li>Simple extractions</li>
+            <li>Surgical extractions</li>
+            <li>Root tip extractions</li>
+            <li>Post-op surgical instructions</li>
+            <li>Referrals to oral surgeons when needed</li>
+            <li>Replacement planning (implants, bridges, dentures)</li>
+          </ul>
+        </div>
+        <div class="content-image">
+          <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1200&auto=format&fit=crop" alt="Dental care" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="benefits-header reveal">
+        <h2>Compassionate care when you <em>need</em> it most</h2>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal reveal-delay-1">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h3>Save Natural Teeth</h3>
+          <p>Root canals preserve your natural tooth, maintaining your bite, jawbone health, and smile without the need for implants or bridges.</p>
+        </div>
+        <div class="benefit-card reveal reveal-delay-2">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Pain Relief</h3>
+          <p>These procedures eliminate the source of dental pain. Most patients feel immediate relief and are back to normal within days.</p>
+        </div>
+        <div class="benefit-card reveal reveal-delay-3">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Efficient Treatment</h3>
+          <p>Modern techniques mean most root canals are completed in a single visit, getting you out of discomfort quickly and comfortably.</p>
+        </div>
+        <div class="benefit-card reveal reveal-delay-4">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3>Prevent Spread</h3>
+          <p>Treating infection promptly prevents it from spreading to surrounding teeth or into the jawbone, protecting your overall oral health.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section reveal">
+    <div class="container">
+      <h2>Experiencing tooth pain?</h2>
+      <p>Don&rsquo;t suffer in silence. Request your appointment today and we&rsquo;ll get you out of pain and back to feeling like yourself.</p>
+      <a href="../index.html#appointment" class="cta-btn">
+        Request Appointment
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="../assets/logo/2b226c_219e7198a8464dc08dbd784a24859bc6.avif" alt="Zent Family Dentistry" style="height:40px;width:auto;filter:brightness(0) invert(1);opacity:0.9;"></div>
+          <p>A family dental practice devoted to restoring and enhancing the natural beauty of your smile using conservative, state-of-the-art procedures. Serving South Bend and surrounding communities.</p>
+        </div>
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="../our-practice.html">Our Practice</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../our-practice.html#doctors">Meet the Doctors</a></li>
+            <li><a href="../index.html#testimonials">Testimonials</a></li>
+            <li><a href="#">Patient Forms</a></li>
+            <li><a href="#">Pay My Bill</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links">
+            <li><a href="cleanings-prevention.html">Cleanings & Prevention</a></li>
+            <li><a href="cosmetic-dentistry.html">Cosmetic Dentistry</a></li>
+            <li><a href="dental-implants.html">Dental Implants</a></li>
+            <li><a href="crowns-fillings.html">Crowns & Fillings</a></li>
+            <li><a href="clear-aligners.html">Clear Aligners</a></li>
+            <li><a href="pediatric-dentistry.html">Pediatric Dentistry</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Contact</h3>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>3410 Douglas Rd<br>South Bend, IN 46635</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>(574) 234-4117</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Mon &ndash; Thu: 8am &ndash; 5pm</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Zent Family Dentistry. All rights reserved.</span>
+        <span>American Dental Association &middot; Indiana Dental Association &middot; North Central Dental Society</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open'); navToggle.setAttribute('aria-expanded', String(open));
+        navToggle.classList.toggle('open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          navLinks.classList.remove('open');
+          navToggle.classList.remove('open'); navToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

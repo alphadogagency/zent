@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Practice | Zent Family Dentistry | South Bend Dentist</title>
+  <meta name="description" content="Meet Drs. Stephen and Sheena Zent. A family dental practice in South Bend, Indiana built on high standards, education and prevention, uncompromising safety, training and expertise, and a positive patient experience.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --sage: #4a8bb3;
+      --sage-deep: #3c7aa0;
+      --sage-light: #e6f0f6;
+      --cream: #f2f7fa;
+      --blush: #e6f0f6;
+      --blush-light: #f0f5f8;
+      --warm-white: #f9fbfc;
+      --text-dark: #262c2f;
+      --text-mid: #525a5e;
+      --text-light: #666c70;
+      --accent: #cbd5d9;
+      --accent-text: #a2aeb3;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'Outfit', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--warm-white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.25rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+      transition: background .4s, box-shadow .4s, padding .4s;
+    }
+    .nav.scrolled { padding: 0.8rem 3rem; }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo-img { height: 72px; width: auto; transition: opacity .3s; }
+    .nav-logo-img:hover { opacity: 0.8; }
+    .nav-links { display: flex; align-items: center; gap: 2.2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      letter-spacing: 0.02em;
+      transition: color .3s;
+    }
+    .nav-links a.active { color: var(--sage-deep); }
+    .nav-links a:hover { color: var(--sage-deep); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a svg { vertical-align: middle; margin-left: 2px; transition: transform .3s; }
+    .nav-dropdown:hover > a svg { transform: rotate(180deg); }
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      background: #fff;
+      border-radius: 16px;
+      padding: 0.6rem;
+      min-width: 240px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s, visibility .25s, transform .25s;
+      pointer-events: none;
+      z-index: 200;
+    }
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      font-size: 0.9rem !important;
+      font-weight: 400 !important;
+      color: var(--text-mid) !important;
+      transition: background .2s, color .2s;
+    }
+    .dropdown-menu a:hover {
+      background: var(--sage-light);
+      color: var(--sage-deep) !important;
+    }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--sage-deep);
+      color: #fff !important;
+      padding: 0.7rem 1.6rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: background .3s, transform .3s;
+    }
+    .nav-cta:hover { background: var(--sage); transform: translateY(-1px); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+    .nav-toggle span {
+      display: block; width: 24px; height: 2px;
+      background: var(--sage-deep);
+      margin: 5px 0; transition: .3s; border-radius: 2px;
+    }
+
+    /* ===== HERO BANNER ===== */
+    .hero-banner {
+      background: var(--sage-deep);
+      color: #fff;
+      padding: 9rem 0 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+      top: -200px; right: -200px;
+      border-radius: 50%;
+    }
+    .hero-banner-eyebrow {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 1.25rem;
+    }
+    .hero-banner h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    .hero-banner h1 em { font-style: italic; color: var(--blush); }
+    .hero-banner p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      opacity: 0.85;
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ===== DOCTORS INTRO (editorial spread) ===== */
+    .doctors-intro {
+      position: relative;
+      padding: 8rem 0;
+      background: var(--warm-white);
+      overflow: hidden;
+    }
+    .doctors-intro::before {
+      content: '';
+      position: absolute;
+      top: 4rem; bottom: 4rem; left: 0;
+      width: 38%;
+      background: var(--sage-light);
+      z-index: 0;
+    }
+    .doctors-intro-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 5rem;
+      display: grid;
+      grid-template-columns: minmax(380px, 1fr) minmax(420px, 1.1fr);
+      gap: 5rem;
+      align-items: center;
+    }
+    .doctors-intro-figure { position: relative; }
+    .doctors-intro-figure::before {
+      content: '';
+      position: absolute;
+      top: -1.25rem; left: -1.25rem; right: 1.25rem; bottom: 1.25rem;
+      border: 1.5px solid var(--sage-deep);
+      border-radius: 8px;
+      z-index: 0;
+    }
+    .doctors-intro-figure img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 6px;
+      display: block;
+      box-shadow: 0 30px 60px -25px rgba(38, 44, 47, 0.35);
+    }
+    .doctors-intro-stamp {
+      position: absolute;
+      bottom: -1.75rem; right: -1.5rem;
+      z-index: 2;
+      background: var(--sage-deep);
+      color: #fff;
+      width: 130px; height: 130px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      box-shadow: 0 15px 35px -10px rgba(38, 44, 47, 0.4);
+    }
+    .doctors-intro-stamp .stamp-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 0.15rem;
+    }
+    .doctors-intro-stamp .stamp-num {
+      font-size: 1.85rem;
+      letter-spacing: -0.01em;
+      line-height: 1;
+    }
+    .doctors-intro-stamp .stamp-foot {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-top: 0.35rem;
+    }
+    .doctors-intro-content { position: relative; }
+    .doctors-intro-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage-deep);
+      margin-bottom: 1.75rem;
+    }
+    .doctors-intro-eyebrow::before {
+      content: '';
+      width: 32px; height: 1px;
+      background: var(--sage-deep);
+    }
+    .doctors-intro-names {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+      line-height: 1.05;
+      color: var(--text-dark);
+      margin-bottom: 2rem;
+      letter-spacing: -0.01em;
+    }
+    .doctors-intro-names .first { display: block; }
+    .doctors-intro-names .amp {
+      color: var(--sage);
+      font-style: italic;
+      padding: 0 0.15em;
+    }
+    .doctors-intro-creds {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(38, 44, 47, 0.08);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+    .doctors-intro-creds span strong {
+      display: block;
+      color: var(--text-dark);
+      margin-top: 0.2rem;
+      letter-spacing: 0.12em;
+    }
+    .doctors-intro-body {
+      column-count: 2;
+      column-gap: 2.5rem;
+      font-size: 0.98rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+    }
+    .doctors-intro-body p { margin-bottom: 1rem; break-inside: avoid; }
+    .doctors-intro-body p:last-child { margin-bottom: 0; }
+
+    /* ===== ABOUT ===== */
+    .about {
+      padding: 8rem 0;
+      background: var(--warm-white);
+    }
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-images {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .about-img {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+    }
+    .about-img:first-child { margin-top: 3rem; }
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s;
+    }
+    .about-img:hover img { transform: scale(1.04); }
+    .about-circle {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: var(--sage);
+      border-radius: 50%;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      text-align: center;
+      line-height: 1.3;
+      box-shadow: 0 10px 40px rgba(61,90,64,0.3);
+    }
+    .about-content { max-width: 520px; }
+    .section-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-text);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      line-height: 1.15;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .section-title em { font-style: italic; color: var(--sage-deep); }
+    .section-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    .value-card {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .value-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+    .value-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--sage-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+      color: var(--sage-deep);
+    }
+    .value-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+    }
+    .value-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.5; font-weight: 300; }
+
+    /* ===== DOCTORS ===== */
+    .doctors {
+      padding: 8rem 0;
+      background: var(--cream);
+    }
+    .doctors-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .doctors-grid .doctor-card.featured {
+      grid-column: span 2;
+    }
+    @media (max-width: 700px) {
+      .doctors-grid .doctor-card.featured { grid-column: auto; }
+    }
+    .doctor-card {
+      background: var(--warm-white);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: transform .4s, box-shadow .4s;
+    }
+    .doctor-card:hover { transform: translateY(-5px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+    .doctor-img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      position: relative;
+      background: var(--sage-light);
+    }
+    .doctor-info { padding: 2rem; }
+    .doctor-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+    }
+    .doctor-info .credential {
+      font-size: 0.9rem;
+      color: var(--accent-text);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+    }
+    .doctor-info p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    /* Stagger children */
+    .stagger-children > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s cubic-bezier(0.16, 1, 0.3, 1), transform .6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .stagger-children.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: none; }
+    .stagger-children.visible > *:nth-child(2) { transition-delay: 0.08s; opacity: 1; transform: none; }
+    .stagger-children.visible > *:nth-child(3) { transition-delay: 0.16s; opacity: 1; transform: none; }
+    .stagger-children.visible > *:nth-child(4) { transition-delay: 0.24s; opacity: 1; transform: none; }
+
+    /* ===== PILLARS ===== */
+    .pillars {
+      background: var(--cream);
+      padding: 8rem 0;
+    }
+    .pillars-header {
+      max-width: 720px;
+      margin: 0 auto 4.5rem;
+      text-align: center;
+    }
+    .pillars-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage-deep);
+      margin-bottom: 1rem;
+    }
+    .pillars-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.2vw, 2.8rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--text-dark);
+      margin-bottom: 1.25rem;
+    }
+    .pillars-title em { font-style: italic; color: var(--sage-deep); }
+    .pillars-intro {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+    .pillars-list {
+      display: grid;
+      gap: 1rem;
+      max-width: 1080px;
+      margin: 0 auto;
+      counter-reset: pillar;
+    }
+    .pillar {
+      counter-increment: pillar;
+      background: #fff;
+      border-radius: 20px;
+      padding: 2.5rem 3rem 2.5rem 6rem;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      transition: transform .35s, box-shadow .35s;
+    }
+    .pillar::before {
+      content: counter(pillar, decimal-leading-zero);
+      position: absolute;
+      top: 2.4rem;
+      left: 2.5rem;
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--sage-deep);
+      letter-spacing: -0.02em;
+    }
+    .pillar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+    }
+    .pillar h3 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      color: var(--text-dark);
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.01em;
+    }
+    .pillar p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      padding: 7rem 0;
+      background: var(--sage-deep);
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 50%;
+      top: -100px; left: -100px;
+    }
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .cta-section h2 em { font-style: italic; color: var(--blush); }
+    .cta-section p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      opacity: 0.85;
+      max-width: 550px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #fff;
+      color: var(--sage-deep);
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--text-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 5rem 0 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+    .footer-brand .footer-logo { margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.7; font-weight: 300; max-width: 300px; }
+    .footer h4, .footer .footer-heading {
+      font-family: var(--font-display);
+      font-size: 1rem; color: #fff;
+      margin-bottom: 1.2rem;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.7rem; }
+    .footer-links a { font-size: 0.9rem; font-weight: 300; transition: color .3s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+    .footer-contact-item svg { flex-shrink: 0; margin-top: 2px; opacity: 0.5; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s cubic-bezier(0.16, 1, 0.3, 1), transform .8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1000px) {
+      .doctors-intro-inner { grid-template-columns: 1fr; gap: 4rem; padding: 0 2rem; }
+      .doctors-intro::before { width: 100%; top: 0; bottom: 60%; }
+      .doctors-intro-figure { max-width: 460px; margin: 0 auto; }
+      .doctors-intro-body { column-count: 1; }
+      .doctors-intro-creds { flex-wrap: wrap; gap: 1.2rem; }
+    }
+    @media (max-width: 900px) {
+      .nav {
+        padding: 0.85rem 1.25rem;
+        background: rgba(255,255,255,0.97);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+      }
+      .nav.scrolled { padding: 0.75rem 1.25rem; }
+      .nav-logo-img { height: 52px; }
+      .nav-cta { display: none; }
+      .nav-toggle { display: block; position: relative; z-index: 200; }
+      .nav-toggle.open span:nth-child(1) { transform: translate(0, 7px) rotate(45deg); }
+      .nav-toggle.open span:nth-child(2) { opacity: 0; }
+      .nav-toggle.open span:nth-child(3) { transform: translate(0, -7px) rotate(-45deg); }
+      .nav-links {
+        display: flex;
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        background: #fff;
+        padding: 5.5rem 1.5rem 2rem;
+        gap: 0;
+        list-style: none;
+        max-height: 100vh;
+        overflow-y: auto;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform .35s ease, opacity .25s, visibility .25s;
+        pointer-events: none;
+        z-index: 99;
+      }
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+      .nav-links > .nav-logo { display: none; }
+      .nav-links li { width: 100%; border-bottom: 1px solid rgba(0,0,0,0.06); }
+      .nav-links li:last-child { border-bottom: 0; }
+      .nav-links li > a { display: block; padding: 1rem 0.25rem; font-size: 1.05rem; }
+      .nav-dropdown { position: static; }
+      .nav-dropdown > a svg { display: none; }
+      .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        box-shadow: none;
+        background: transparent;
+        padding: 0 0 0.5rem 1rem;
+        margin: 0;
+        min-width: 0;
+        border-radius: 0;
+      }
+      .dropdown-menu a {
+        padding: 0.55rem 0 !important;
+        font-size: 0.95rem !important;
+        border-bottom: 1px dashed rgba(0,0,0,0.05);
+      }
+      .dropdown-menu a:hover { background: transparent; }
+
+      .container { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .hero-banner { padding: 7rem 1.25rem 3rem; }
+      .hero-banner h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
+      .hero-banner p { font-size: 1rem; }
+      .about { padding: 4rem 0; }
+      .about .container { grid-template-columns: 1fr; gap: 3rem; }
+      .doctors { padding: 4rem 0; }
+      .doctors-grid { grid-template-columns: 1fr; max-width: 380px; }
+      .pillars { padding: 4rem 0; }
+      .pillars-header { margin-bottom: 3rem; }
+      .pillar { padding: 1.75rem 1.5rem 1.75rem 4.5rem; }
+      .pillar::before { left: 1.5rem; top: 1.75rem; font-size: 1.3rem; }
+      .pillar h3 { font-size: 1.2rem; }
+      .pillar p { font-size: 0.95rem; }
+      .doctors-intro { padding: 4rem 0; }
+      .doctors-intro-stamp { width: 90px; height: 90px; right: -0.25rem; bottom: -1rem; }
+      .doctors-intro-stamp .stamp-num { font-size: 1.3rem; }
+      .doctors-intro-stamp .stamp-eyebrow,
+      .doctors-intro-stamp .stamp-foot { font-size: 0.6rem; }
+      .cta-section { padding: 4rem 1rem; }
+      .footer { padding: 3rem 0 1.5rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .nav { padding: 0.75rem 1.1rem; }
+      .nav-logo-img { height: 48px; }
+      .hero-banner { padding: 6rem 1rem 2.5rem; }
+      .footer-top { grid-template-columns: 1fr; }
+      .doctors-intro-inner { padding: 0 1.25rem; }
+    }
+    /* ===== ACCESSIBILITY ===== */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--sage-deep);
+      color: #fff;
+      padding: 0.75rem 1.25rem;
+      z-index: 1000;
+      border-radius: 0 0 8px 0;
+      font-weight: 500;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 0; outline: 3px solid #fff; outline-offset: -3px; }
+    a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
+      outline: 3px solid var(--sage-deep);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    .footer a:focus-visible { outline-color: #fff; }
+    .form-required-note {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      margin: 0 0 1rem;
+      font-weight: 300;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .marquee-row { animation: none !important; }
+      .reveal, .stagger-children > * { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo"><img src="assets/logo/2b226c_219e7198a8464dc08dbd784a24859bc6.avif" alt="Zent Family Dentistry" class="nav-logo-img"></a>
+    <ul class="nav-links" id="nav-links-list">
+      <li><a href="our-practice.html" class="active">Our Practice</a></li>
+      <li class="nav-dropdown">
+        <a href="index.html#services">Services <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="dropdown-menu">
+          <a href="services/cleanings-prevention.html">Cleanings &amp; Prevention</a>
+          <a href="services/cosmetic-dentistry.html">Cosmetic Dentistry</a>
+          <a href="services/crowns-fillings.html">Crowns &amp; Fillings</a>
+          <a href="services/dental-implants.html">Dental Implants</a>
+          <a href="services/pediatric-dentistry.html">Pediatric Dentistry</a>
+          <a href="services/clear-aligners.html">Clear Aligners</a>
+          <a href="services/root-canals-extractions.html">Root Canals &amp; Extractions</a>
+          <a href="services/botox-tmj.html">Botox &amp; TMJ Relief</a>
+        </div>
+      </li>
+      <li><a href="#doctors">Doctors</a></li>
+      <li><a href="index.html#testimonials">Testimonials</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#appointment" class="nav-cta">Request Appointment</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links-list"><span></span><span></span><span></span></button>
+  </nav>
+
+  <main id="main-content">
+
+  <!-- HERO BANNER -->
+  <section class="hero-banner">
+    <div class="container">
+      <div class="hero-banner-eyebrow">Zent Family Dentistry</div>
+      <h1>Our <em>Practice</em></h1>
+      <p>We are a family dental practice devoted to restoring and enhancing the natural beauty of your smile using conservative, state-of-the-art procedures with modern technology that will result in beautiful, long lasting smiles.</p>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="pillars">
+    <div class="container">
+      <div class="pillars-header reveal">
+        <div class="pillars-eyebrow">What We Stand For</div>
+        <h2 class="pillars-title">Five principles that shape <em>every visit</em></h2>
+        <p class="pillars-intro">We are a family dental practice devoted to restoring and enhancing the natural beauty of your smile using conservative, state-of-the-art procedures with modern technology that will result in beautiful, long lasting smiles.</p>
+      </div>
+      <div class="pillars-list">
+        <div class="pillar reveal">
+          <h3>High Standards</h3>
+          <p>A standard of excellence in personalized dental care enables us to provide the quality dental services our patients deserve. We provide comprehensive treatment planning and use restorative and cosmetic dentistry to achieve your optimal dental health. Should a dental emergency occur, we make every effort to see and care for you as soon as possible.</p>
+        </div>
+        <div class="pillar reveal reveal-delay-1">
+          <h3>Education &amp; Prevention</h3>
+          <p>As a practice, we are true believers that preventive care and education are the keys to optimal dental health. We strive to provide &ldquo;dental health care&rdquo; vs. &ldquo;disease care.&rdquo; That&rsquo;s why we focus on thorough exams &mdash; checking the overall health of your teeth and gums, performing oral cancer exams, and taking x-rays when necessary. We also know that routine cleanings, flossing, sealants, and fluoride are all helpful in preventing dental disease.</p>
+        </div>
+        <div class="pillar reveal reveal-delay-2">
+          <h3>Uncompromising Safety</h3>
+          <p>Infection control in our office is also very important to us. To protect our patients and ourselves, we strictly maintain sterilization and cross contamination processes using standards recommended by the Occupational Safety and Health Administration (OSHA), the American Dental Association (ADA), and the Center for Disease Control (CDC).</p>
+        </div>
+        <div class="pillar reveal reveal-delay-3">
+          <h3>Training &amp; Expertise</h3>
+          <p>As your dental health professionals, we want you to be confident knowing that we are a team of highly trained and skilled clinicians. To give you the best possible service and results, we are committed to continuing education classes and learning. We attend dental lectures, meetings, and dental conventions to stay informed of new techniques, the latest products, and the newest equipment that a modern dental office can utilize to provide state-of-the-art dental care.</p>
+        </div>
+        <div class="pillar reveal">
+          <h3>Positive Experience</h3>
+          <p>Building a foundation of trust by treating our patients as special individuals is vital to our success. We understand how uneasy some patients may feel about their dental visits, and how we can make a difference in providing a relaxing and positive experience. Our entire team is dedicated to providing you with excellent, personalized care and service to make your visits as comfortable and pleasant as possible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTORS -->
+  <section class="doctors" id="doctors">
+    <div class="container">
+      <div class="doctors-header reveal">
+        <div class="section-label">Meet the Doctors</div>
+        <h2 class="section-title">A team built on <em>trust</em> and family</h2>
+        <p class="section-text" style="margin-top:1rem;">Drs. Zent are dedicated to providing their patients with the highest quality care by practicing conservative, preventative dentistry. They believe in a comprehensive approach to treating patients&rsquo; oral health with the goal of providing healthy smiles that last a lifetime.</p>
+      </div>
+      <div class="doctors-grid">
+        <div class="doctor-card featured reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_3b399326cc324ff5ab4a5102e6bb7032~mv2.jpg/v1/crop/x_0,y_0,w_2073,h_2487/fill/w_600,h_720,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_4912-Enhanced-NR_edited_edited.jpg" alt="Dr. Stephen A. Zent" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Dr. Stephen A. Zent</h3>
+            <div class="credential">DDS &middot; Indiana University School of Dentistry</div>
+            <p>Born and raised in Fort Wayne, Indiana. After attending Bishop Dwenger High School, Dr. Zent received his Bachelor of Arts in Chemistry from Indiana University before earning his Doctor of Dental Surgery degree from IUSD.</p>
+          </div>
+        </div>
+        <div class="doctor-card featured reveal reveal-delay-2">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_386847762a1849c8ace4737ce831513d~mv2.jpg/v1/crop/x_0,y_301,w_2000,h_2399/fill/w_600,h_720,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_4918-Enhanced-NR_edited.jpg" alt="Dr. Sheena K. Zent" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Dr. Sheena K. Zent</h3>
+            <div class="credential">DDS &middot; Indiana University School of Dentistry</div>
+            <p>Born in Cookeville, Tennessee and a graduate of Clay High School in South Bend. Dr. Zent received her Bachelor of Science in Neuroscience from the University of Michigan before earning her Doctor of Dental Surgery degree from IUSD.</p>
+          </div>
+        </div>
+
+        <div class="doctor-card reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_b2126889aa444ea0a76a6a2fe332bbaa~mv2.jpeg/v1/crop/x_0,y_0,w_506,h_506/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/C4E53322-1BA5-46E3-8763-7C307549602D.jpeg" alt="Dr. Tracy Kelsey" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Dr. Tracy Kelsey</h3>
+            <div class="credential">Associate Dentist &middot; DMD</div>
+            <p>Elkhart-raised, Tufts School of Dental Medicine grad with an Advanced Education in General Dentistry residency in Boston. ADA, IDA, and NCDA member &mdash; and a certified Invisalign provider.</p>
+          </div>
+        </div>
+        <div class="doctor-card reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_ec1a46330e4746cebcc429fd4322bcaf~mv2.jpeg/v1/crop/x_0,y_79,w_683,h_683/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/6939013824919268996.jpeg" alt="Mary-Margaret" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Mary-Margaret</h3>
+            <div class="credential">Office Manager</div>
+            <p>20+ years in the dental field and a self-described &ldquo;dental nerd.&rdquo; A loyal University of Michigan and Detroit Lions fan who spends fall watching her teams or antiquing with her husband Lewis.</p>
+          </div>
+        </div>
+
+        <div class="doctor-card reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_d1c181cee09541709cb0ff7b9191962f~mv2.jpg/v1/crop/x_0,y_72,w_3665,h_3666/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_4899-Enhanced-NR.jpg" alt="Maiya" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Maiya</h3>
+            <div class="credential">Front Desk Coordinator</div>
+            <p>Mishawaka-born, in dentistry since 2020. Loves making patients comfortable, chasing sunshine with her kids, and live music &mdash; especially Taylor Swift.</p>
+          </div>
+        </div>
+        <div class="doctor-card reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_ac14af3fcefa4f5492ae8f086d0771f2~mv2.jpg/v1/crop/x_0,y_74,w_3023,h_3021/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_4890-Enhanced-NR.jpg" alt="Tina" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Tina</h3>
+            <div class="credential">Front Desk Coordinator</div>
+            <p>Michigan City native who raised three kids in Florida and earned her Health Administration degree there. In dentistry since 2021 and happiest at a live music show.</p>
+          </div>
+        </div>
+        <div class="doctor-card reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_e34f6f7c75f547c4b38125c0ff829513~mv2.jpg/v1/crop/x_0,y_33,w_1130,h_1132/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/Syds%20Photo.jpg" alt="Sydney" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Sydney</h3>
+            <div class="credential">Front Desk Coordinator</div>
+            <p>Mishawaka High grad, dental-assistant trained at Elkhart Career Center before transitioning to the front desk. Off the clock, you&rsquo;ll find her with family and her German Shepherd, Nova.</p>
+          </div>
+        </div>
+
+        <div class="doctor-card reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_3e28cb4d078f47569c355fe5fc0b9104~mv2.png/v1/crop/x_0,y_0,w_1117,h_1119/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_1306_PNG.png" alt="Jaci" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Jaci</h3>
+            <div class="credential">Dental Hygienist</div>
+            <p>IUSB Dental Hygiene grad and former 10-year adjunct faculty in the IUSB DH Program. Deeply interested in the link between oral health and total-body health.</p>
+          </div>
+        </div>
+        <div class="doctor-card reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_f0f6a31caa354a1883fdeafbc86b3244~mv2.png/v1/crop/x_33,y_0,w_1033,h_1033/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_1287_PNG.png" alt="Audrey" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Audrey</h3>
+            <div class="credential">Dental Hygienist</div>
+            <p>IUSB grad practicing since 2005. Loves helping patients build great hygiene habits and forming friendly, lasting relationships.</p>
+          </div>
+        </div>
+        <div class="doctor-card reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_0e40ad09a73c4e22add137fd569e8292~mv2.png/v1/crop/x_468,y_0,w_1065,h_1064/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_1275_PNG.png" alt="Lynn" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Lynn</h3>
+            <div class="credential">Dental Hygienist</div>
+            <p>IUSB grad in local dentistry for over 10 years &mdash; joined Zent in 2015 for the family-friendly environment. A reader, runner, and Pinterest-project enthusiast.</p>
+          </div>
+        </div>
+        <div class="doctor-card reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_0a45360f518f4fc39bf30410af34db45~mv2.png/v1/crop/x_58,y_0,w_912,h_911/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_1289_PNG.png" alt="Jaime" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Jaime</h3>
+            <div class="credential">Dental Hygienist</div>
+            <p>2007 IUSB DH grad practicing in the area for over a decade. Believes patient education is the key to disease prevention.</p>
+          </div>
+        </div>
+        <div class="doctor-card reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_02b7ba5c93894782bdf587ed1e6a62f2~mv2.png/v1/crop/x_0,y_29,w_982,h_976/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_1291_PNG.png" alt="Tracy" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Tracy</h3>
+            <div class="credential">Dental Hygienist</div>
+            <p>Ferris State University grad with 18+ years in dental hygiene. Treats every patient like family.</p>
+          </div>
+        </div>
+
+        <div class="doctor-card reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_70f431357d424cd88184f5f622c1c5c2~mv2.png/v1/crop/x_0,y_0,w_987,h_988/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_1298_PNG.png" alt="Martha" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Martha</h3>
+            <div class="credential">Expanded Functions Dental Assistant</div>
+            <p>Louisiana-born, Arkansas-raised, and South Bend resident for 11 years. Trained at the Michiana Dental Assisting School &mdash; loves helping patients show off their smiles.</p>
+          </div>
+        </div>
+        <div class="doctor-card reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_7521625fccf84c57a1ca3f94ec7b8b5f~mv2.png/v1/crop/x_396,y_159,w_1037,h_1035/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_1278_PNG.png" alt="Saleena" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Saleena</h3>
+            <div class="credential">Expanded Functions Dental Assistant</div>
+            <p>Niles, MI native and Lake Michigan College graduate. Enjoys growing her dental skills and time with her family, friends, and two dogs.</p>
+          </div>
+        </div>
+        <div class="doctor-card reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_a89689b140564416836bceb1307e6d53~mv2.jpg/v1/crop/x_0,y_0,w_2100,h_2103/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_4929-Enhanced-NR.jpg" alt="Serena" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Serena</h3>
+            <div class="credential">Expanded Functions Dental Assistant</div>
+            <p>Oregon-raised and now in South Bend. Ivy Tech graduate who&rsquo;s excited to help patients achieve their best smile.</p>
+          </div>
+        </div>
+        <div class="doctor-card reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_a642993b54bf40d7b9fccb85259871e5~mv2.jpg/v1/crop/x_0,y_31,w_3151,h_3147/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_4935-Enhanced-NR.jpg" alt="Bel&eacute;n" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Bel&eacute;n</h3>
+            <div class="credential">Expanded Functions Dental Assistant</div>
+            <p>Raised in Puerto Rico, in Indiana since 2007. Fluent in English and Spanish, in dentistry since 2011, with a passion for patient education.</p>
+          </div>
+        </div>
+        <div class="doctor-card reveal">
+          <div class="doctor-img">
+            <img src="https://static.wixstatic.com/media/2b226c_c9d9c86131954552bc5edc495e443667~mv2.jpg/v1/crop/x_0,y_153,w_3136,h_3140/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_4904-Enhanced-NR.jpg" alt="Dena" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="doctor-info">
+            <h3>Dena</h3>
+            <div class="credential">Expanded Functions Dental Assistant</div>
+            <p>South Bend native and Ivy Tech grad, in the dental field since 2015. Loves learning new ways to care for patients.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Come meet us in <em>South Bend</em></h2>
+      <p>Zent Family Dentistry is currently accepting new patients. Request your appointment today and discover the difference.</p>
+      <a href="index.html#appointment" class="cta-btn">
+        Request Appointment
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="assets/logo/2b226c_219e7198a8464dc08dbd784a24859bc6.avif" alt="Zent Family Dentistry" style="height:40px;width:auto;filter:brightness(0) invert(1);opacity:0.9;"></div>
+          <p>A family dental practice devoted to restoring and enhancing the natural beauty of your smile using conservative, state-of-the-art procedures. Serving South Bend and surrounding communities.</p>
+        </div>
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="our-practice.html">Our Practice</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
+            <li><a href="#">Patient Forms</a></li>
+            <li><a href="#">Pay My Bill</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links">
+            <li><a href="services/cleanings-prevention.html">Cleanings &amp; Prevention</a></li>
+            <li><a href="services/cosmetic-dentistry.html">Cosmetic Dentistry</a></li>
+            <li><a href="services/dental-implants.html">Dental Implants</a></li>
+            <li><a href="services/crowns-fillings.html">Crowns &amp; Fillings</a></li>
+            <li><a href="services/clear-aligners.html">Clear Aligners</a></li>
+            <li><a href="services/pediatric-dentistry.html">Pediatric Dentistry</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Contact</h3>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>3410 Douglas Rd<br>South Bend, IN 46635</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>(574) 234-4117</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>office@zentfamilydentistry.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Mon &ndash; Thu: 8am &ndash; 5pm</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Zent Family Dentistry. All rights reserved.</span>
+        <span>American Dental Association &middot; Indiana Dental Association &middot; North Central Dental Society</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open'); navToggle.setAttribute('aria-expanded', String(open));
+        navToggle.classList.toggle('open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A' && !e.target.closest('.nav-dropdown > a')) {
+          navLinks.classList.remove('open');
+          navToggle.classList.remove('open'); navToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    const reveals = document.querySelectorAll('.reveal, .stagger-children');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mishawaka Family Dentist | Zent Family Dentistry</title>
+  <meta name="description" content="Zent Family Dentistry serves Mishawaka, Indiana families just 10 minutes from our South Bend office. Drs. Stephen and Sheena Zent provide comprehensive family dental care. Call (574) 234-4117.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --sage: #4a8bb3;
+      --sage-deep: #3c7aa0;
+      --sage-light: #e6f0f6;
+      --cream: #f2f7fa;
+      --blush: #e6f0f6;
+      --blush-light: #f0f5f8;
+      --warm-white: #f9fbfc;
+      --text-dark: #262c2f;
+      --text-mid: #525a5e;
+      --text-light: #666c70;
+      --accent: #cbd5d9;
+      --accent-text: #a2aeb3;
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-body: 'Outfit', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--warm-white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+      padding: 0.8rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background .4s, box-shadow .4s, padding .4s;
+    }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo-img { height: 72px; width: auto; transition: opacity .3s; }
+    .nav-logo-img:hover { opacity: 0.8; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      letter-spacing: 0.02em;
+      transition: color .3s;
+    }
+    .nav-links a:hover { color: var(--sage-deep); }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--sage-deep);
+      color: #fff !important;
+      padding: 0.7rem 1.6rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: background .3s, transform .3s;
+    }
+    .nav-cta:hover { background: var(--sage); transform: translateY(-1px); }
+
+    /* Mobile nav */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--sage-deep);
+      margin: 5px 0;
+      transition: .3s;
+      border-radius: 2px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: var(--sage-deep);
+      position: relative;
+      overflow: hidden;
+      padding: 10rem 0 0;
+      text-align: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+      top: -200px;
+      right: -200px;
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border: 1px solid rgba(255,255,255,0.06);
+      bottom: -150px;
+      left: -100px;
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--blush);
+    }
+    .hero-image {
+      margin: 3rem 5rem 0;
+      border-radius: 24px 24px 0 0;
+      overflow: hidden;
+      aspect-ratio: 16/7;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+      font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #fff;
+      color: var(--sage-deep);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      border: none;
+      cursor: pointer;
+      transition: all .3s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+    .btn-primary svg { transition: transform .3s; }
+    .btn-primary:hover svg { transform: translateX(3px); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border: 2px solid rgba(255,255,255,0.4);
+      padding: 0.9rem 1.8rem;
+      border-radius: 50px;
+      transition: all .3s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+
+    /* ===== ABOUT / WHY US ===== */
+    .about {
+      padding: 6rem 0;
+      background: #fff;
+    }
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-content { max-width: 560px; }
+    .section-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-text);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      line-height: 1.15;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .section-title em { font-style: italic; color: var(--sage-deep); }
+    .section-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    .value-card {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .value-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+    .value-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--sage-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+      color: var(--sage-deep);
+    }
+    .value-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+    }
+    .value-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.5; font-weight: 300; }
+
+    .about-map {
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--sage-light);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .about-map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ===== SERVICES ===== */
+    .services {
+      padding: 6rem 0;
+      background: var(--cream);
+    }
+    .services-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 4rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      transition: all .4s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--sage-light);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      color: var(--sage-deep);
+    }
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      color: var(--text-dark);
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--text-mid);
+      font-weight: 300;
+    }
+    .service-card .card-arrow {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateX(-5px);
+      transition: all .4s;
+      color: var(--sage-deep);
+    }
+    .service-card:hover .card-arrow { opacity: 1; transform: translateX(0); }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      padding: 6rem 0;
+      background: var(--warm-white);
+    }
+    .testimonials-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 1rem;
+    }
+    .testimonials-sub {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .marquee-row {
+      display: flex;
+      gap: 1.5rem;
+      width: max-content;
+    }
+    .marquee-row-wrapper {
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .marquee-row-wrapper:last-child { margin-bottom: 0; }
+    .marquee-row.scroll-left {
+      animation: marqueeLeft 60s linear infinite;
+    }
+    .marquee-row.scroll-right {
+      animation: marqueeRight 60s linear infinite;
+    }
+    .marquee-row-wrapper:hover .marquee-row {
+      animation-play-state: paused;
+    }
+    @keyframes marqueeLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes marqueeRight {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .testimonial-card {
+      background: var(--cream);
+      border-radius: 20px;
+      padding: 2rem;
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      width: 340px;
+      flex-shrink: 0;
+      transition: transform .3s, box-shadow .3s;
+      cursor: pointer;
+    }
+    .testimonial-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+    .testimonial-stars {
+      color: #d4a832;
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial-text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--sage-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      color: var(--sage-deep);
+    }
+    .author-name {
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .author-label {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* ===== INSURANCE ===== */
+    .insurance {
+      padding: 6rem 0;
+      background: var(--blush);
+    }
+    .insurance .container {
+      text-align: center;
+    }
+    .insurance-header {
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+    .insurance-visual {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .insurance-badge {
+      background: var(--warm-white);
+      border-radius: 14px;
+      padding: 1.2rem 1.8rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      transition: transform .3s;
+    }
+    .insurance-badge:hover { transform: translateY(-2px); }
+    .insurance-badge.highlight {
+      background: var(--sage-deep);
+      color: #fff;
+    }
+
+    /* ===== APPOINTMENT FORM ===== */
+    .appointment-form-section {
+      padding: 6rem 0;
+      background: var(--cream);
+    }
+    .form-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .form-info h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      line-height: 1.15;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .form-info h2 em { font-style: italic; color: var(--sage-deep); }
+    .form-info p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .form-info .form-phone {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--sage-deep);
+    }
+    #contact-form {
+      background: #fff;
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid #dde3e6;
+      border-radius: 12px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      background: var(--warm-white);
+      transition: border-color .3s, box-shadow .3s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--sage);
+      box-shadow: 0 0 0 3px rgba(60,122,160,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--text-light); }
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      background: var(--sage-deep);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background .3s, transform .2s;
+    }
+    .form-submit:hover { background: var(--sage); transform: translateY(-1px); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-success {
+      text-align: center;
+      padding: 3rem;
+    }
+    .form-success h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--sage-deep);
+      margin-bottom: 0.5rem;
+    }
+    .form-success p { color: var(--text-mid); font-weight: 300; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--text-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 5rem 0 2rem;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+    .footer-brand .footer-logo { margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.7; font-weight: 300; max-width: 300px; }
+    .footer h4, .footer .footer-heading {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 1.2rem;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.7rem; }
+    .footer-links a {
+      font-size: 0.9rem;
+      font-weight: 300;
+      transition: color .3s;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+    .footer-contact-item svg { flex-shrink: 0; margin-top: 2px; opacity: 0.5; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s cubic-bezier(0.16, 1, 0.3, 1), transform .8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    .stagger-children > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s cubic-bezier(0.16, 1, 0.3, 1), transform .6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .stagger-children.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: none; }
+    .stagger-children.visible > *:nth-child(2) { transition-delay: 0.08s; opacity: 1; transform: none; }
+    .stagger-children.visible > *:nth-child(3) { transition-delay: 0.08s; opacity: 1; transform: none; }
+    .stagger-children.visible > *:nth-child(4) { transition-delay: 0.16s; opacity: 1; transform: none; }
+    .stagger-children.visible > *:nth-child(5) { transition-delay: 0.24s; opacity: 1; transform: none; }
+    .stagger-children.visible > *:nth-child(6) { transition-delay: 0.32s; opacity: 1; transform: none; }
+    .stagger-children.visible > *:nth-child(7) { transition-delay: 0.4s; opacity: 1; transform: none; }
+    .stagger-children.visible > *:nth-child(8) { transition-delay: 0.48s; opacity: 1; transform: none; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1100px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .nav {
+        padding: 0.85rem 1.25rem;
+        background: rgba(255,255,255,0.97);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+      }
+      .nav.scrolled { padding: 0.75rem 1.25rem; }
+      .nav-logo-img { height: 52px; }
+      .nav-cta { display: none; }
+      .nav-toggle { display: block; position: relative; z-index: 200; }
+      .nav-toggle.open span:nth-child(1) { transform: translate(0, 7px) rotate(45deg); }
+      .nav-toggle.open span:nth-child(2) { opacity: 0; }
+      .nav-toggle.open span:nth-child(3) { transform: translate(0, -7px) rotate(-45deg); }
+      .nav-links {
+        display: flex;
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        background: #fff;
+        padding: 5.5rem 1.5rem 2rem;
+        gap: 0;
+        list-style: none;
+        max-height: 100vh;
+        overflow-y: auto;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform .35s ease, opacity .25s, visibility .25s;
+        pointer-events: none;
+        z-index: 99;
+      }
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+      .nav-links > .nav-logo { display: none; }
+      .nav-links li { width: 100%; border-bottom: 1px solid rgba(0,0,0,0.06); }
+      .nav-links li:last-child { border-bottom: 0; }
+      .nav-links li > a { display: block; padding: 1rem 0.25rem; font-size: 1.05rem; }
+
+      .hero { padding: 8rem 0 4rem; }
+
+      .container { padding-left: 2rem; padding-right: 2rem; }
+      .about .container { grid-template-columns: 1fr; gap: 3rem; }
+      .about { padding: 4rem 0; }
+      .services { padding: 4rem 0; }
+      .services-grid { grid-template-columns: 1fr; }
+
+      .testimonials { padding: 4rem 0; }
+
+      .insurance .container { grid-template-columns: 1fr; }
+      .insurance { padding: 4rem 0; }
+
+      .appointment-form-section { padding: 4rem 0; }
+      .form-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+
+      .footer { padding: 3rem 0 1.5rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.8rem; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .values-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn-primary, .hero-actions .btn-secondary { width: 100%; justify-content: center; }
+      .testimonial-card { width: 280px; padding: 1.5rem; }
+      .insurance-visual { grid-template-columns: repeat(2, 1fr); }
+    }
+    /* ===== ACCESSIBILITY ===== */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--sage-deep);
+      color: #fff;
+      padding: 0.75rem 1.25rem;
+      z-index: 1000;
+      border-radius: 0 0 8px 0;
+      font-weight: 500;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 0; outline: 3px solid #fff; outline-offset: -3px; }
+    a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
+      outline: 3px solid var(--sage-deep);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    .footer a:focus-visible { outline-color: #fff; }
+    .form-required-note {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      margin: 0 0 1rem;
+      font-weight: 300;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .marquee-row { animation: none !important; }
+      .reveal, .stagger-children > * { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo"><img src="../assets/logo/2b226c_219e7198a8464dc08dbd784a24859bc6.avif" alt="Zent Family Dentistry" class="nav-logo-img"></a>
+    <ul class="nav-links" id="nav-links-list">
+      <li><a href="../our-practice.html">Our Practice</a></li>
+      <li><a href="../index.html#services">Services</a></li>
+      <li><a href="../our-practice.html#doctors">Doctors</a></li>
+      <li><a href="../index.html#testimonials">Testimonials</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="#appointment" class="nav-cta">Request Appointment</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links-list">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="reveal">Your <em>Mishawaka</em> Family Dentist</h1>
+      <p class="hero-sub reveal reveal-delay-1">Serving Mishawaka families, just 10 minutes from our South Bend office. Drs. Stephen and Sheena Zent provide the same gentle, comprehensive dental care your family deserves &mdash; with easy access via Main Street and Lincoln Way.</p>
+      <div class="hero-actions reveal reveal-delay-2">
+        <a href="#appointment" class="btn-primary">
+          Request Appointment
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:+15742344117" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (574) 234-4117
+        </a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="../assets/logo/heroimages/c75cc2_1a41eacb249f4cbbbe8ea004542b9487~mv2_hd.jpg" alt="Zent Family Dentistry">
+    </div>
+  </section>
+
+  <!-- ABOUT / WHY US -->
+  <section class="about">
+    <div class="container">
+      <div class="about-content reveal">
+        <div class="section-label">Why Choose Zent Family Dentistry</div>
+        <h2 class="section-title">Quality dental care for <em>Mishawaka</em> families</h2>
+        <p class="section-text">Conveniently located just 10 minutes from Mishawaka via Main Street or Lincoln Way, Zent Family Dentistry brings you comprehensive dental care without the long drive. Drs. Stephen and Sheena Zent are a husband-and-wife team who have been serving the greater Michiana community since 2012, with a focus on conservative, preventative dentistry using state-of-the-art technology.</p>
+        <div class="values-grid stagger-children">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4>High Standards</h4>
+            <p>Every detail matters in your care</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+            </div>
+            <h4>Education First</h4>
+            <p>Empowering patients with knowledge</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            </div>
+            <h4>Safe &amp; Modern</h4>
+            <p>Latest sterilization &amp; technology</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h4>Expert Training</h4>
+            <p>Advanced continuing education</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-map reveal reveal-delay-2">
+        <iframe src="https://www.google.com/maps?q=3410+Douglas+Rd,+South+Bend,+IN+46635&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="container">
+      <div class="services-header reveal">
+        <div class="section-label">What We Offer</div>
+        <h2 class="section-title">Comprehensive care for your <em>whole family</em></h2>
+        <p class="section-text">From routine cleanings to full-mouth restorations, Mishawaka families trust Zent Family Dentistry for exceptional dental care just minutes away.</p>
+      </div>
+      <div class="services-grid stagger-children">
+        <a href="../services/cleanings.html" class="service-card">
+          <div class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Cleanings &amp; Prevention</h3>
+          <p>Exams, digital X-rays, fluoride treatment, oral cancer screenings, and sealants.</p>
+        </a>
+        <a href="../services/cosmetic-dentistry.html" class="service-card">
+          <div class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>Cosmetic Dentistry</h3>
+          <p>Porcelain veneers, teeth whitening, and smile makeovers to enhance your confidence.</p>
+        </a>
+        <a href="../services/crowns-fillings.html" class="service-card">
+          <div class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          </div>
+          <h3>Crowns &amp; Fillings</h3>
+          <p>Restorations that look natural and stand the test of time.</p>
+        </a>
+        <a href="../services/dental-implants.html" class="service-card">
+          <div class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </div>
+          <h3>Dental Implants</h3>
+          <p>Permanent, natural-feeling replacements for missing teeth.</p>
+        </a>
+        <a href="../services/pediatric-dentistry.html" class="service-card">
+          <div class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h3>Pediatric Dentistry</h3>
+          <p>Gentle, child-friendly care that makes visits fun and stress-free.</p>
+        </a>
+        <a href="../services/clear-aligners.html" class="service-card">
+          <div class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          </div>
+          <h3>Clear Aligners</h3>
+          <p>Straighten your smile discreetly with modern clear aligner orthodontics.</p>
+        </a>
+        <a href="../services/root-canals-extractions.html" class="service-card">
+          <div class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3>Root Canals &amp; Extractions</h3>
+          <p>Expert endodontic and oral surgery care when you need it most.</p>
+        </a>
+        <a href="../services/botox-tmj.html" class="service-card">
+          <div class="card-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <div class="service-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3>Botox &amp; TMJ Relief</h3>
+          <p>Therapeutic and cosmetic Botox for pain relief and facial aesthetics.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials-header reveal">
+        <div class="section-label">What Patients Say</div>
+        <h2 class="section-title">Real stories, <em>real</em> smiles</h2>
+      </div>
+      <p class="section-text testimonials-sub reveal">Reviews from <a href="https://www.google.com/search?q=zent+family+dentistry" target="_blank" rel="noopener" style="color:var(--sage-deep);text-decoration:underline;">Google</a></p>
+    </div>
+    <!-- Row 1: scrolls left -->
+    <div class="marquee-row-wrapper">
+      <div class="marquee-row scroll-left">
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">I needed a filling, which is never a fun experience, but the staff and Drs at Zent made it my best experience yet at the dentist. Dr. Sheena took the time to answer all my questions. She went out of her way to make me feel comfortable and relaxed!</p>
+          <div class="testimonial-author"><div class="author-avatar">S</div><div><div class="author-name">Sarah</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">Best dental experience I have ever had! The front desk was so welcoming and I was given the most in-depth checkup. The dental assistant and dentist took their time to talk me through everything.</p>
+          <div class="testimonial-author"><div class="author-avatar">J</div><div><div class="author-name">J.R.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">Dr. Stephen is amazing! He explained every step of my crown procedure and I barely felt a thing. The whole office has a calm, welcoming vibe. Highly recommend to anyone looking for a new dentist.</p>
+          <div class="testimonial-author"><div class="author-avatar">M</div><div><div class="author-name">Michelle T.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">We bring all three of our kids here and they actually look forward to their dental visits. The team is so patient and gentle with children. Dr. Sheena makes it fun for them!</p>
+          <div class="testimonial-author"><div class="author-avatar">K</div><div><div class="author-name">Katie R.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">Moved to South Bend last year and finding Zent Family Dentistry was the best thing. They got me in quickly, the office is beautiful and modern, and the staff genuinely cares.</p>
+          <div class="testimonial-author"><div class="author-avatar">D</div><div><div class="author-name">David L.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">I needed a filling, which is never a fun experience, but the staff and Drs at Zent made it my best experience yet at the dentist. Dr. Sheena took the time to answer all my questions. She went out of her way to make me feel comfortable and relaxed!</p>
+          <div class="testimonial-author"><div class="author-avatar">S</div><div><div class="author-name">Sarah</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">Best dental experience I have ever had! The front desk was so welcoming and I was given the most in-depth checkup. The dental assistant and dentist took their time to talk me through everything.</p>
+          <div class="testimonial-author"><div class="author-avatar">J</div><div><div class="author-name">J.R.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">Dr. Stephen is amazing! He explained every step of my crown procedure and I barely felt a thing. The whole office has a calm, welcoming vibe. Highly recommend to anyone looking for a new dentist.</p>
+          <div class="testimonial-author"><div class="author-avatar">M</div><div><div class="author-name">Michelle T.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">We bring all three of our kids here and they actually look forward to their dental visits. The team is so patient and gentle with children. Dr. Sheena makes it fun for them!</p>
+          <div class="testimonial-author"><div class="author-avatar">K</div><div><div class="author-name">Katie R.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">Moved to South Bend last year and finding Zent Family Dentistry was the best thing. They got me in quickly, the office is beautiful and modern, and the staff genuinely cares.</p>
+          <div class="testimonial-author"><div class="author-avatar">D</div><div><div class="author-name">David L.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+      </div>
+    </div>
+    <!-- Row 2: scrolls right -->
+    <div class="marquee-row-wrapper">
+      <div class="marquee-row scroll-right">
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">Pleasant, family environment. Compassionate staff and excellent care! Wouldn't go anywhere else for my dental needs.</p>
+          <div class="testimonial-author"><div class="author-avatar">B</div><div><div class="author-name">Beth Ann</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">I was terrified of the dentist for years. Dr. Sheena and the hygienists were so understanding and never made me feel judged. They worked with me at my pace. I'm no longer afraid to go!</p>
+          <div class="testimonial-author"><div class="author-avatar">A</div><div><div class="author-name">Amanda W.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">Had my teeth whitened here and the results are incredible. The Zents really know cosmetic dentistry. Everyone at the office was professional and friendly. Will definitely be back!</p>
+          <div class="testimonial-author"><div class="author-avatar">R</div><div><div class="author-name">Rachel S.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">From scheduling to checkout, everything runs smoothly here. No long waits, no surprises on the bill. They even submitted my insurance for me. This is how a dental practice should be run.</p>
+          <div class="testimonial-author"><div class="author-avatar">T</div><div><div class="author-name">Tom H.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">I drive from Mishawaka because Zent Family Dentistry is worth the trip. Dr. Stephen did my implant and it looks and feels completely natural. Can't say enough good things about this practice.</p>
+          <div class="testimonial-author"><div class="author-avatar">C</div><div><div class="author-name">Chris M.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">Pleasant, family environment. Compassionate staff and excellent care! Wouldn't go anywhere else for my dental needs.</p>
+          <div class="testimonial-author"><div class="author-avatar">B</div><div><div class="author-name">Beth Ann</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">I was terrified of the dentist for years. Dr. Sheena and the hygienists were so understanding and never made me feel judged. They worked with me at my pace. I'm no longer afraid to go!</p>
+          <div class="testimonial-author"><div class="author-avatar">A</div><div><div class="author-name">Amanda W.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">Had my teeth whitened here and the results are incredible. The Zents really know cosmetic dentistry. Everyone at the office was professional and friendly. Will definitely be back!</p>
+          <div class="testimonial-author"><div class="author-avatar">R</div><div><div class="author-name">Rachel S.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">From scheduling to checkout, everything runs smoothly here. No long waits, no surprises on the bill. They even submitted my insurance for me. This is how a dental practice should be run.</p>
+          <div class="testimonial-author"><div class="author-avatar">T</div><div><div class="author-name">Tom H.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+        <a href="https://www.google.com/search?q=zent+family+dentistry#lrd=0x8816cd3f09c1b9cb:0x312633937c341c6e,1,,,," target="_blank" rel="noopener" class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">I drive from Mishawaka because Zent Family Dentistry is worth the trip. Dr. Stephen did my implant and it looks and feels completely natural. Can't say enough good things about this practice.</p>
+          <div class="testimonial-author"><div class="author-avatar">C</div><div><div class="author-name">Chris M.</div><div class="author-label">Google Review</div></div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSURANCE -->
+  <section class="insurance">
+    <div class="container">
+      <div class="insurance-header reveal">
+        <div class="section-label">Insurance &amp; Financing</div>
+        <h2 class="section-title">We accept <em>almost all</em> dental insurance plans</h2>
+        <p class="section-text">The only plans we cannot accept are Medicaid and DMO or HMO plans. Otherwise, if you have it, we accept it. Our team submits your dental claims for you, regardless of which insurance you have. No insurance? No problem &mdash; ask about our VIP Membership Plans.</p>
+      </div>
+      <div class="insurance-visual reveal reveal-delay-2">
+        <div class="insurance-badge highlight">In-Network with Cigna</div>
+        <div class="insurance-badge">Care Credit</div>
+        <div class="insurance-badge">Sunbit</div>
+        <div class="insurance-badge">Delta Dental</div>
+        <div class="insurance-badge">Aetna</div>
+        <div class="insurance-badge">MetLife</div>
+        <div class="insurance-badge highlight">VIP Membership Plans</div>
+        <div class="insurance-badge">United Healthcare</div>
+        <div class="insurance-badge">Guardian</div>
+        <div class="insurance-badge">Humana</div>
+        <div class="insurance-badge">Cherry Financing</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT FORM -->
+  <section class="appointment-form-section" id="appointment">
+    <div class="container">
+      <div class="form-wrapper">
+        <div class="form-info reveal">
+          <div class="section-label">Request an Appointment</div>
+          <h2>Ready for a <em>healthier</em> smile?</h2>
+          <p>Fill out the form and our team will reach out to confirm your appointment. Conveniently located just 10 minutes from Mishawaka &mdash; an easy drive via Main Street or Lincoln Way.</p>
+          <a href="tel:+15742344117" class="form-phone">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Or call (574) 234-4117
+          </a>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <form id="contact-form" aria-describedby="form-required-note"><p id="form-required-note" class="form-required-note"><span aria-hidden="true">*</span> indicates a required field</p>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="John Smith" required aria-required="true">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" placeholder="(574) 555-1234" required aria-required="true">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required aria-required="true">
+            </div>
+            <div class="form-group">
+              <label for="plan">I'm Interested In *</label>
+              <select id="plan" name="plan" required aria-required="true">
+                <option value="">Select a service...</option>
+                <option value="General Checkup">General Checkup &amp; Cleaning</option>
+                <option value="Cosmetic Dentistry">Cosmetic Dentistry</option>
+                <option value="Dental Implants">Dental Implants</option>
+                <option value="Clear Aligners">Clear Aligner Orthodontics</option>
+                <option value="Pediatric Dentistry">Pediatric Dentistry</option>
+                <option value="Botox / TMJ">Botox / TMJ Relief</option>
+                <option value="Emergency / Pain">Emergency / Pain</option>
+                <option value="Smile Club Adult">VIP Smile Club &mdash; Adult ($399/yr)</option>
+                <option value="Smile Club Child">VIP Smile Club &mdash; Child ($349/yr)</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message (optional)</label>
+              <textarea id="message" name="message" placeholder="Tell us about your needs..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">Request Appointment</button>
+          </form>
+          <div class="form-success" style="display:none;" role="status" aria-live="polite">
+            <h3>Thank You!</h3>
+            <p>We've received your request and will contact you shortly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="../assets/logo/2b226c_219e7198a8464dc08dbd784a24859bc6.avif" alt="Zent Family Dentistry" style="height:40px;width:auto;filter:brightness(0) invert(1);opacity:0.9;"></div>
+          <p>A family dental practice devoted to restoring and enhancing the natural beauty of your smile using conservative, state-of-the-art procedures. Serving Mishawaka and surrounding communities.</p>
+        </div>
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="../our-practice.html">Our Practice</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../our-practice.html#doctors">Meet the Doctors</a></li>
+            <li><a href="../index.html#testimonials">Testimonials</a></li>
+            <li><a href="#">Patient Forms</a></li>
+            <li><a href="#">Pay My Bill</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links">
+            <li><a href="../services/cleanings.html">Cleanings &amp; Prevention</a></li>
+            <li><a href="../services/cosmetic-dentistry.html">Cosmetic Dentistry</a></li>
+            <li><a href="../services/dental-implants.html">Dental Implants</a></li>
+            <li><a href="../services/crowns-fillings.html">Crowns &amp; Fillings</a></li>
+            <li><a href="../services/clear-aligners.html">Orthodontics</a></li>
+            <li><a href="../services/pediatric-dentistry.html">Pediatric Dentistry</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-heading">Contact</h3>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>3410 Douglas Rd<br>South Bend, IN 46635</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>(574) 234-4117</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Mon &ndash; Thu: 8am &ndash; 5pm</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Zent Family Dentistry. All rights reserved.</span>
+        <span>American Dental Association &middot; Indiana Dental Association &middot; North Central Dental Society</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ADA Landings form submission
+    (function () {
+      var SLUG = 'zent-family-dentistry';
+      var ENDPOINT = 'https://' + SLUG + '.adalandings.com/api/submit';
+      var form = document.querySelector('#contact-form');
+      if (!form) return;
+      var successEl = document.querySelector('.form-success');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = (form.querySelector('#name').value || '').trim();
+        var email = (form.querySelector('#email').value || '').trim();
+        var phone = (form.querySelector('#phone').value || '').trim();
+        var plan = (form.querySelector('#plan').value || '').trim();
+        var message = (form.querySelector('#message').value || '').trim();
+        if (!name || !email || !phone || !plan) { alert('Please fill in all required fields.'); return; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email.'); return; }
+        var btn = form.querySelector('[type="submit"]');
+        var orig = btn.textContent;
+        btn.textContent = 'Sending...'; btn.disabled = true;
+        var body = { slug: SLUG, name: name, email: email, phone: phone, plan: plan };
+        if (message) body.message = message;
+        fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+          .then(function(r){return r.json()})
+          .then(function(d){ if(d.success){form.style.display='none';if(successEl)successEl.style.display='block';}else{btn.textContent=orig;btn.disabled=false;alert('Something went wrong. Please call (574) 234-4117.');}})
+          .catch(function(){btn.textContent=orig;btn.disabled=false;alert('Something went wrong. Please call (574) 234-4117.');});
+      });
+    })();
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open'); navToggle.setAttribute('aria-expanded', String(open));
+        navToggle.classList.toggle('open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          navLinks.classList.remove('open');
+          navToggle.classList.remove('open'); navToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    // Reveal on scroll
+    var reveals = document.querySelectorAll('.reveal, .stagger-children');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    reveals.forEach(function(el) { observer.observe(el); });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
