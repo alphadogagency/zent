@@ -435,6 +435,7 @@
       gap: 2.5rem;
       max-width: 1280px;
       margin: 0 auto;
+      align-items: start;
     }
     .doctors-grid .doctor-card.featured {
       grid-column: span 2;
@@ -474,6 +475,76 @@
       color: var(--text-mid);
       font-weight: 300;
     }
+
+    /* Expandable bios */
+    .doctor-bio {
+      position: relative;
+      max-height: 6.15rem; /* 4 lines at 0.9rem x 1.7 */
+      overflow: hidden;
+      transition: max-height .6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .doctor-bio::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 2.4em;
+      background: linear-gradient(to bottom, rgba(249,251,252,0), var(--warm-white));
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+    .doctor-bio.expanded { max-height: 400rem; }
+    .doctor-bio.expanded::after { opacity: 0; }
+    .doctor-bio p { margin-bottom: 0.9rem; }
+    .doctor-bio p:last-child { margin-bottom: 0; }
+    .bio-toggle {
+      margin-top: 0.9rem;
+      padding: 0;
+      background: none;
+      border: none;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: var(--sage-deep);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .bio-toggle:hover span { text-decoration: underline; }
+    .bio-toggle svg { transition: transform .35s; }
+    .bio-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+    /* Headshot placeholder (photo coming soon) */
+    .doctor-img-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+    }
+    .doctor-img-placeholder img {
+      width: 62%;
+      max-width: 250px;
+      height: auto;
+      object-fit: contain;
+    }
+    .photo-soon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(31, 79, 110, 0.92);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity .35s;
+    }
+    .doctor-card:hover .photo-soon,
+    .doctor-card:focus-within .photo-soon { opacity: 1; }
 
     /* Stagger children */
     .stagger-children > * {
@@ -901,7 +972,14 @@
           <div class="doctor-info">
             <h3>Dr. Stephen A. Zent</h3>
             <div class="credential">DDS &middot; Indiana University School of Dentistry</div>
-            <p>Born and raised in Fort Wayne, Indiana. After attending Bishop Dwenger High School, Dr. Zent received his Bachelor of Arts in Chemistry from Indiana University before earning his Doctor of Dental Surgery degree from IUSD.</p>
+            <div class="doctor-bio" id="bio-stephen">
+              <p>Dr. Stephen A. Zent was born and raised in Fort Wayne, Indiana. After attending Bishop Dwenger High School, he attended Indiana University where he received his Bachelor of Arts degree in Chemistry. Dr. Zent then received his Doctor of Dental Surgery degree from the Indiana University School of Dentistry.</p>
+              <p>After graduating from IUSD, Drs. Zent moved to Fort Wayne to practice dentistry. They married in July 2012 and decided they were ready to manage their own practice and move to South Bend where they could practice dentistry in a relaxed family setting.</p>
+              <p>Drs. Zent are trained in a multitude of dental treatments including, but not limited to, restorations (fillings), endodontics (root canals), oral surgery, fixed prosthodontics (crowns and bridges), periodontal disease diagnosis and treatment, oral cancer screening, clear aligner orthodontics, removable prosthodontics (dentures and partial dentures), TMJ and sleep medicine, pediatric dentistry, implant dentistry, therapeutic and cosmetic Botox procedures, and cosmetic dentistry.</p>
+              <p>Outside of work, the Zents enjoy spending time outdoors, cooking, watching movies, reading, playing sports, tailgating for football games, traveling, and spending time with family and friends. They welcomed their first child, Naya, on August 1, 2015 and their second child, Nolan, on September 1, 2017. Their son Nolan was born with a rare, genetic disease called Menkes Disease. Drs. Zent were advocates for awareness for the disease and organized fundraisers to help raise money for both The Menkes Foundation as well as South Bend&rsquo;s local respite hospital for medically fragile children, A Rosie Place. Unfortunately, sweet Nolan passed away on February 6, 2020 just before turning 2.5 years old. On July 1, 2020, the Zents welcomed their third child, Zahra.</p>
+              <p>Drs. Zent are standing members of the American Dental Association, Indiana Dental Association, and North Central Dental Society. They enjoy keeping up with new technology as well as continuing education. Drs. Zent are also currently on the board of directors for Dr. Angie&rsquo;s Dental Health Exchange &mdash; a not-for-profit organization in which volunteer dentists provide dental treatment to the underserved after they have completed a certain number of community service hours in exchange for their dental care.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-stephen"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
         <div class="doctor-card featured reveal reveal-delay-2">
@@ -911,7 +989,14 @@
           <div class="doctor-info">
             <h3>Dr. Sheena K. Zent</h3>
             <div class="credential">DDS &middot; Indiana University School of Dentistry</div>
-            <p>Born in Cookeville, Tennessee and a graduate of Clay High School in South Bend. Dr. Zent received her Bachelor of Science in Neuroscience from the University of Michigan before earning her Doctor of Dental Surgery degree from IUSD.</p>
+            <div class="doctor-bio" id="bio-sheena">
+              <p>Dr. Sheena K. Zent was born in Cookeville, Tennessee. After moving around, including years spent in Europe, Sheena attended Clay High School in South Bend, Indiana. After graduation, Sheena attended the University of Michigan where she received her Bachelor of Science degree in Neuroscience. She then went to Indiana University School of Dentistry, and she attained her Doctor of Dental Surgery degree.</p>
+              <p>After graduating from IUSD, Drs. Zent moved to Fort Wayne to practice dentistry. They married in July 2012 and decided they were ready to manage their own practice and move to South Bend where they could practice dentistry in a relaxed family setting.</p>
+              <p>Drs. Zent are trained in a multitude of dental treatments including, but not limited to, restorations (fillings), endodontics (root canals), oral surgery, fixed prosthodontics (crowns and bridges), periodontal disease diagnosis and treatment, oral cancer screening, clear aligner orthodontics, removable prosthodontics (dentures and partial dentures), TMJ and sleep medicine, pediatric dentistry, implant dentistry, therapeutic and cosmetic Botox procedures, and cosmetic dentistry.</p>
+              <p>Outside of work, the Zents enjoy spending time outdoors, cooking, watching movies, reading, playing sports, tailgating for football games, traveling, and spending time with family and friends. They welcomed their first child, Naya, on August 1, 2015 and their second child, Nolan, on September 1, 2017. Their son Nolan was born with a rare, genetic disease called Menkes Disease. Drs. Zent were advocates for awareness for the disease and organized fundraisers to help raise money for both The Menkes Foundation as well as South Bend&rsquo;s local respite hospital for medically fragile children, A Rosie Place. Unfortunately, sweet Nolan passed away on February 6, 2020 just before turning 2.5 years old. On July 1, 2020, the Zents welcomed their third child, Zahra.</p>
+              <p>Drs. Zent are standing members of the American Dental Association, Indiana Dental Association, and North Central Dental Society. They enjoy keeping up with new technology as well as continuing education. Drs. Zent are also currently on the board of directors for Dr. Angie&rsquo;s Dental Health Exchange &mdash; a not-for-profit organization in which volunteer dentists provide dental treatment to the underserved after they have completed a certain number of community service hours in exchange for their dental care.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-sheena"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
 
@@ -922,7 +1007,28 @@
           <div class="doctor-info">
             <h3>Dr. Tracy Kelsey</h3>
             <div class="credential">Associate Dentist &middot; DMD</div>
-            <p>Elkhart-raised, Tufts School of Dental Medicine grad with an Advanced Education in General Dentistry residency in Boston. ADA, IDA, and NCDA member &mdash; and a certified Invisalign provider.</p>
+            <div class="doctor-bio" id="bio-kelsey">
+              <p>Dr. Tracy Kelsey was raised in Elkhart, Indiana and graduated from Elkhart Memorial High School. She received her B.S. degree in Neuroscience along with minors in Biology and Psychology from Indiana University Bloomington. After graduation, she attended the prestigious Tufts University School of Dental Medicine in Boston, Massachusetts where she received her Doctorate of Dental Medicine. After receiving her doctorate, Dr. Kelsey decided she would like to further hone her skills in general dentistry with a focus on preventative and cosmetic care by completing an Advanced Education in General Dentistry Residency in Boston. Dr. Kelsey is a member of the American Dental Association, Indiana Dental Association, and the North Central Dental Association and is also a certified Invisalign Provider.</p>
+              <p>Dr. Kelsey&rsquo;s favorite part of dentistry is getting to know her patients on a more personal level, but, not far behind, is seeing the proud smile of a patient after completion of a smile makeover. She strongly believes in the value of continuing education and keeping up-to-date with the latest advancements in dentistry.</p>
+              <p>When not working with patients, Dr. Kelsey loves spending time with her family and friends, traveling, pilates, spending time outdoors and cooking.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-kelsey"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          </div>
+        </div>
+        <div class="doctor-card reveal">
+          <div class="doctor-img doctor-img-placeholder">
+            <img src="assets/logo/2b226c_219e7198a8464dc08dbd784a24859bc6.avif" alt="Dr. Farouk Alshatti (photo coming soon)">
+            <div class="photo-soon" aria-hidden="true">Photo Coming Soon</div>
+          </div>
+          <div class="doctor-info">
+            <h3>Dr. Farouk Alshatti</h3>
+            <div class="credential">Associate Dentist &middot; DDS</div>
+            <div class="doctor-bio" id="bio-alshatti">
+              <p>Dr. Alshatti earned his Doctor of Dental Surgery (DDS) degree from the University of Minnesota School of Dentistry and completed an Advanced Education in General Dentistry (AEGD) residency at the South Texas Veterans Health Care System in San Antonio. During his residency, Dr. Alshatti received advanced training in comprehensive general dentistry while caring for a diverse patient population with a wide range of restorative, surgical, and complex dental needs. His training emphasized comprehensive treatment planning, digital dentistry, endodontics, implant placement and restoration, oral surgery, bone grafting, and IV moderate sedation, allowing him to provide a broad scope of care with confidence and precision.</p>
+              <p>Dr. Alshatti enjoys combining science, technology, and artistry to help patients achieve healthy, functional, and confident smiles. He believes in taking the time to understand each patient&rsquo;s goals, explain treatment options clearly, and develop comprehensive treatment plans that focus on long-term oral health. He is a member of the American Dental Association, the Academy of General Dentistry, the Indiana Dental Association, and the Chicago Dental Society.</p>
+              <p>Outside the office, Dr. Alshatti enjoys playing pickleball, hiking, cooking, and spending time with friends and family. He is excited to join the team at Zent Family Dentistry and looks forward to building lasting relationships with patients while serving the South Bend community.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-alshatti"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
         <div class="doctor-card reveal">
@@ -932,7 +1038,12 @@
           <div class="doctor-info">
             <h3>Mary-Margaret</h3>
             <div class="credential">Office Manager</div>
-            <p>20+ years in the dental field and a self-described &ldquo;dental nerd.&rdquo; A loyal University of Michigan and Detroit Lions fan who spends fall watching her teams or antiquing with her husband Lewis.</p>
+            <div class="doctor-bio" id="bio-marymargaret">
+              <p>Mary-Margaret has been in the dental field for over 20 years and brings a wealth of knowledge to our team. A self-prescribed dental nerd, she loves learning about the changes in the dental field.</p>
+              <p>She and her husband Lewis have 3 grown children and 1 cat, Lucy-Fur. Her favorite season is fall, she loves a good pumpkin spice latte, and Halloween in her opinion is the best holiday ever. Mary-Margaret is a HUGE fan of THE University of Michigan and the Detroit Lions. She is a member of her American Legion Auxiliary in Galien, MI and enjoys helping out Veterans where she can.</p>
+              <p>When not at the office, and especially during fall, you can find her watching her teams, reading, or antiquing with Lewis.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-marymargaret"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
 
@@ -943,7 +1054,10 @@
           <div class="doctor-info">
             <h3>Maiya</h3>
             <div class="credential">Front Desk Coordinator</div>
-            <p>Mishawaka-born, in dentistry since 2020. Loves making patients comfortable, chasing sunshine with her kids, and live music &mdash; especially Taylor Swift.</p>
+            <div class="doctor-bio" id="bio-maiya">
+              <p>Born and raised in Mishawaka, Maiya now calls the South Bend area home. She&rsquo;s been working in the dental field since 2020 and enjoys meeting new patients, making them comfortable, and adding a little brightness to their day. Outside of work, life is full and happy with her fianc&eacute; and their two sweet babies. You&rsquo;ll often find her chasing sunshine with her kids, listening to live music, exploring the farmers market, or cooking something delicious. She&rsquo;s happiest with the sun on her face and good music &mdash; especially Taylor Swift &mdash; in the air.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-maiya"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
         <div class="doctor-card reveal">
@@ -953,7 +1067,10 @@
           <div class="doctor-info">
             <h3>Tina</h3>
             <div class="credential">Front Desk Coordinator</div>
-            <p>Michigan City native who raised three kids in Florida and earned her Health Administration degree there. In dentistry since 2021 and happiest at a live music show.</p>
+            <div class="doctor-bio" id="bio-tina">
+              <p>Tina was born in Michigan City, Indiana. She spent most of her adult life in Florida where she raised her 3 children and achieved her degree in Health Administration. She has worked in dentistry since 2021. Tina enjoys working closely with patients to provide a positive and gentle environment. She is very charismatic and adventurous, and an all-the-time on-duty mom and wife. Outside of that, she loves all types of live music.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-tina"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
         <div class="doctor-card reveal">
@@ -963,7 +1080,10 @@
           <div class="doctor-info">
             <h3>Sydney</h3>
             <div class="credential">Front Desk Coordinator</div>
-            <p>Mishawaka High grad, dental-assistant trained at Elkhart Career Center before transitioning to the front desk. Off the clock, you&rsquo;ll find her with family and her German Shepherd, Nova.</p>
+            <div class="doctor-bio" id="bio-sydney">
+              <p>Sydney was born and raised in Mishawaka, and is a Mishawaka High School graduate. During her high school years, she also attended Elkhart Career Center where she learned her Dental Assisting skills. Since then, she made a decision to transition to a front desk position and she loves it! Sydney finds happiness in making patients feel welcome and comfortable, and does everything in her power to ensure a great experience. In her free time, Sydney enjoys spending time with her family and friends, and playing with her German Shepherd pup, Nova.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-sydney"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
 
@@ -974,7 +1094,10 @@
           <div class="doctor-info">
             <h3>Jaci</h3>
             <div class="credential">Dental Hygienist</div>
-            <p>IUSB Dental Hygiene grad and former 10-year adjunct faculty in the IUSB DH Program. Deeply interested in the link between oral health and total-body health.</p>
+            <div class="doctor-bio" id="bio-jaci">
+              <p>Jaci is passionate about being a dental hygienist. She is a graduate of IUSB with a degree in Dental Hygiene, as well as a Bachelor Degree of General Studies. As an adjunct faculty member in the IUSB Dental Hygiene Program for 10 years, Jaci developed a strong interest in learning and teaching, and is very interested in the link between oral health and total body health. Most of all, Jaci enjoys and values the relationships that she has with patients of all ages. Jaci is inspired by them to provide the highest level of care possible. It is a pleasure to work with such a professional, skilled, and caring staff in our new state-of-the-art dental facility.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-jaci"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
         <div class="doctor-card reveal">
@@ -984,7 +1107,10 @@
           <div class="doctor-info">
             <h3>Audrey</h3>
             <div class="credential">Dental Hygienist</div>
-            <p>IUSB grad practicing since 2005. Loves helping patients build great hygiene habits and forming friendly, lasting relationships.</p>
+            <div class="doctor-bio" id="bio-audrey">
+              <p>Audrey graduated from IUSB and is a licensed dental hygienist. She has worked at the Colfax office since graduating in 2005. A few things she enjoys about her profession are helping people obtain optimal oral hygiene, sharing patient education information and building friendly and lasting relationships with her patients. Audrey loves spending time with her husband, two young children and dog. She spends most of her time at her kids&rsquo; sporting events, working out, cooking, traveling and socializing with family and friends.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-audrey"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
         <div class="doctor-card reveal">
@@ -994,7 +1120,10 @@
           <div class="doctor-info">
             <h3>Lynn</h3>
             <div class="credential">Dental Hygienist</div>
-            <p>IUSB grad in local dentistry for over 10 years &mdash; joined Zent in 2015 for the family-friendly environment. A reader, runner, and Pinterest-project enthusiast.</p>
+            <div class="doctor-bio" id="bio-lynn">
+              <p>Lynn is an IUSB graduate. She has worked in the local dental community full-time for ten years now. Keeping the patient&rsquo;s needs in mind during their appointment, Lynn is most concerned for her patient&rsquo;s comfort. It is important to Lynn to share her dental knowledge for her patients to have confidence in their own home care routine. When she is not working, Lynn spends time reading, running and doing Pinterest projects. Lynn enjoys spending time with her family most. Lynn was excited to join our team in 2015 due to the wonderful family-friendly environment.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-lynn"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
         <div class="doctor-card reveal">
@@ -1004,7 +1133,10 @@
           <div class="doctor-info">
             <h3>Jaime</h3>
             <div class="credential">Dental Hygienist</div>
-            <p>2007 IUSB DH grad practicing in the area for over a decade. Believes patient education is the key to disease prevention.</p>
+            <div class="doctor-bio" id="bio-jaime">
+              <p>Jaime is a 2007 graduate from the IUSB dental hygiene program and has been practicing in our area for over 10 years. She enjoys developing relationships and working one on one with patients. Jaime feels education plays a key role in disease prevention and loves providing the knowledge her patients need to improve their oral health on a daily basis. In her free time she enjoys spending time with her family and friends, as well as cooking and making sweet treats.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-jaime"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
         <div class="doctor-card reveal">
@@ -1014,7 +1146,11 @@
           <div class="doctor-info">
             <h3>Tracy</h3>
             <div class="credential">Dental Hygienist</div>
-            <p>Ferris State University grad with 18+ years in dental hygiene. Treats every patient like family.</p>
+            <div class="doctor-bio" id="bio-tracy">
+              <p>Tracy is a graduate of Ferris State University, and has been practicing dental hygiene in the area for over 18 years. Tracy believes in treating each patient like family, making them feel comfortable and giving the best care possible. Her favorite part of her job is getting to know so many amazing people and building relationships with her patients.</p>
+              <p>Tracy feels privileged to be a part of the Zent Family Dentistry team because everyone in our office is sincerely devoted to our patients and giving them the very best treatment in every aspect of their visit. When Tracy is not at the office, you can find her enjoying time with her husband and 2 children at their sporting events, volunteering at school, exercising, traveling and serving at her church.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-tracy"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
 
@@ -1025,7 +1161,10 @@
           <div class="doctor-info">
             <h3>Martha</h3>
             <div class="credential">Expanded Functions Dental Assistant</div>
-            <p>Louisiana-born, Arkansas-raised, and South Bend resident for 11 years. Trained at the Michiana Dental Assisting School &mdash; loves helping patients show off their smiles.</p>
+            <div class="doctor-bio" id="bio-martha">
+              <p>Martha was born in Louisiana and raised in Arkansas, but she has been living in South Bend for 11 years. She received her training at the Michiana Dental Assisting School. Martha is a fun-loving, outgoing person who loves developing relationships with patients and helping to make their appointment enjoyable and comfortable. As an expanded duty dental assistant, Martha also takes pride in restoring patients&rsquo; teeth so that they can have a smile that they can show off to friends. Martha has been married for 11 years and has 2 children. They also have a rescue pup named Bennie. In her spare time, Martha loves to hang out with family and friends, and spend time outdoors.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-martha"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
         <div class="doctor-card reveal">
@@ -1035,7 +1174,10 @@
           <div class="doctor-info">
             <h3>Saleena</h3>
             <div class="credential">Expanded Functions Dental Assistant</div>
-            <p>Niles, MI native and Lake Michigan College graduate. Enjoys growing her dental skills and time with her family, friends, and two dogs.</p>
+            <div class="doctor-bio" id="bio-saleena">
+              <p>Saleena was born and raised in Niles, MI and now lives in South Bend. She is a graduate of Lake Michigan College with a degree in Dental Assisting. Saleena enjoys growing, learning and expanding her abilities in the dental profession. She loves spending time with her family, friends and two dogs. In her spare time, she enjoys reading and crocheting. Saleena is very excited to be a part of our dental team.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-saleena"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
         <div class="doctor-card reveal">
@@ -1045,7 +1187,10 @@
           <div class="doctor-info">
             <h3>Serena</h3>
             <div class="credential">Expanded Functions Dental Assistant</div>
-            <p>Oregon-raised and now in South Bend. Ivy Tech graduate who&rsquo;s excited to help patients achieve their best smile.</p>
+            <div class="doctor-bio" id="bio-serena">
+              <p>Serena was born and raised in Oregon and now lives in the South Bend area. She is a graduate of Ivy Tech College with a degree as an Expanded Functions Dental Assistant. Serena enjoys learning more about patients and strives to help them achieve their best smile. In her spare time, she enjoys spending time with her friends and photography. Serena is so excited to meet you and learn more about dentistry.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-serena"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
         <div class="doctor-card reveal">
@@ -1055,7 +1200,11 @@
           <div class="doctor-info">
             <h3>Bel&eacute;n</h3>
             <div class="credential">Expanded Functions Dental Assistant</div>
-            <p>Raised in Puerto Rico, in Indiana since 2007. Fluent in English and Spanish, in dentistry since 2011, with a passion for patient education.</p>
+            <div class="doctor-bio" id="bio-belen">
+              <p>Bel&eacute;n was born and raised in Puerto Rico. She has been living in Indiana since 2007. Bel&eacute;n is fluent in both English and Spanish. Bel&eacute;n started working in the dental field in 2011 as a sterilization technician. While translating and educating patients on their needed dental treatments, she was inspired and motivated to pursue a career in dental assisting.</p>
+              <p>Bel&eacute;n&rsquo;s favorite part of her job is being able to educate patients on their oral health needs and making sure every part of their experience, while at the dental office, is as pleasant and comfortable as possible. In her free time, Bel&eacute;n enjoys spending time with her children and friends, checking out local festivals, cooking, and making art.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-belen"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
         <div class="doctor-card reveal">
@@ -1065,7 +1214,10 @@
           <div class="doctor-info">
             <h3>Dena</h3>
             <div class="credential">Expanded Functions Dental Assistant</div>
-            <p>South Bend native and Ivy Tech grad, in the dental field since 2015. Loves learning new ways to care for patients.</p>
+            <div class="doctor-bio" id="bio-dena">
+              <p>Dena was born and raised in South Bend. She went to Ivy Tech and has been in the dental field since 2015. She enjoys learning new ways to provide care to patients. Outside of the office she enjoys spending time with her dog Sunny, husband, family, and friends.</p>
+            </div>
+            <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-dena"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
       </div>
@@ -1165,6 +1317,16 @@
         }
       });
     }
+
+    // Expandable team bios
+    document.querySelectorAll('.bio-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const bio = document.getElementById(btn.getAttribute('aria-controls'));
+        const expanded = bio.classList.toggle('expanded');
+        btn.setAttribute('aria-expanded', String(expanded));
+        btn.querySelector('span').textContent = expanded ? 'See less' : 'See more';
+      });
+    });
 
     const reveals = document.querySelectorAll('.reveal, .stagger-children');
     const observer = new IntersectionObserver((entries) => {
