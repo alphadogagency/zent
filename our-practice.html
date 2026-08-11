@@ -76,7 +76,7 @@
     .nav-links a:hover { color: var(--sage-deep); }
     .nav-dropdown { position: relative; }
     .nav-dropdown > a svg { vertical-align: middle; margin-left: 2px; transition: transform .3s; }
-    .nav-dropdown:hover > a svg { transform: rotate(180deg); }
+    .nav-dropdown:hover > a svg, .nav-dropdown:focus-within > a svg { transform: rotate(180deg); }
     .dropdown-menu {
       position: absolute;
       top: 100%;
@@ -93,7 +93,8 @@
       pointer-events: none;
       z-index: 200;
     }
-    .nav-dropdown:hover .dropdown-menu {
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu {
       opacity: 1;
       visibility: visible;
       transform: translateX(-50%) translateY(0);
@@ -155,7 +156,7 @@
       font-weight: 500;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      opacity: 0.7;
+      opacity: 1;
       margin-bottom: 1.25rem;
     }
     .hero-banner h1 {
@@ -169,7 +170,7 @@
     .hero-banner p {
       font-size: 1.1rem;
       font-weight: 300;
-      opacity: 0.85;
+      opacity: 1;
       max-width: 640px;
       margin: 0 auto;
       line-height: 1.7;
@@ -546,6 +547,43 @@
     .doctor-card:hover .photo-soon,
     .doctor-card:focus-within .photo-soon { opacity: 1; }
 
+
+    /* Doctors/Team tabs */
+    .team-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+    }
+    .team-tab {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      border: 2px solid var(--sage-deep);
+      background: transparent;
+      color: var(--sage-deep);
+      cursor: pointer;
+      transition: background .3s, color .3s;
+    }
+    .team-tab[aria-selected="true"] {
+      background: var(--sage-deep);
+      color: #fff;
+    }
+    .team-tab:hover[aria-selected="false"] { background: var(--sage-light); }
+    .doctor-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 0.3rem;
+    }
+    .doctors, #meet-the-doctors, #meet-the-team { scroll-margin-top: 110px; }
+
     /* Stagger children */
     .stagger-children > * {
       opacity: 0;
@@ -661,7 +699,7 @@
     .cta-section p {
       font-size: 1.05rem;
       font-weight: 300;
-      opacity: 0.85;
+      opacity: 1;
       max-width: 550px;
       margin: 0 auto 2rem;
       line-height: 1.7;
@@ -890,21 +928,26 @@
   <nav class="nav" id="nav">
     <a href="index.html" class="nav-logo"><img src="assets/logo/2b226c_219e7198a8464dc08dbd784a24859bc6.avif" alt="Zent Family Dentistry" class="nav-logo-img"></a>
     <ul class="nav-links" id="nav-links-list">
-      <li><a href="our-practice.html" class="active">Our Practice</a></li>
+      <li class="nav-dropdown">
+        <a href="our-practice.html" class="active">Our Practice <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="dropdown-menu">
+          <a href="#meet-the-doctors">Meet the Doctors</a>
+          <a href="#meet-the-team">Meet the Team</a>
+        </div>
+      </li>
       <li class="nav-dropdown">
         <a href="index.html#services">Services <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="dropdown-menu">
           <a href="services/cleanings-prevention.html">Cleanings &amp; Prevention</a>
-          <a href="services/cosmetic-dentistry.html">Cosmetic Dentistry</a>
+          <a href="services/cosmetic-dentistry.html">Cosmetic Dentistry &amp; Botox</a>
           <a href="services/crowns-fillings.html">Crowns &amp; Fillings</a>
           <a href="services/dental-implants.html">Dental Implants</a>
-          <a href="services/pediatric-dentistry.html">Pediatric Dentistry</a>
           <a href="services/clear-aligners.html">Clear Aligners</a>
-          <a href="services/root-canals-extractions.html">Root Canals &amp; Extractions</a>
-          <a href="services/botox-tmj.html">Botox &amp; TMJ Relief</a>
+          <a href="services/extractions.html">Extractions</a>
+          <a href="services/root-canals.html">Root Canals</a>
+          <a href="services/tooth-replacement.html">Tooth Replacement</a>
         </div>
       </li>
-      <li><a href="#doctors">Doctors</a></li>
       <li><a href="index.html#testimonials">Testimonials</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
@@ -956,20 +999,50 @@
     </div>
   </section>
 
-  <!-- DOCTORS -->
+  <!-- DOCTORS INTRO -->
+  <section class="doctors-intro" id="about">
+    <div class="doctors-intro-inner">
+      <div class="doctors-intro-figure reveal">
+        <img src="assets/270187877_5224772230920119_5414949871058269665_n.jpg" alt="Drs. Sheena and Stephen Zent smiling together in their South Bend office">
+        <div class="doctors-intro-stamp">
+          <span class="stamp-eyebrow">Est.</span>
+          <span class="stamp-num">2012</span>
+          <span class="stamp-foot">South Bend</span>
+        </div>
+      </div>
+      <div class="doctors-intro-content reveal reveal-delay-2">
+        <div class="doctors-intro-eyebrow">Meet the Doctors</div>
+        <h2 class="doctors-intro-names">
+          <span class="first">Stephen <span class="amp">&amp;</span></span>
+          <span>Sheena Zent</span>
+        </h2>
+        <div class="doctors-intro-creds">
+          <span>Dr. Stephen A. Zent<strong>DDS</strong></span>
+          <span>Dr. Sheena K. Zent<strong>DDS</strong></span>
+        </div>
+        <div class="doctors-intro-body">
+          <p>Drs. Zent are dedicated to providing their patients with the highest quality care by practicing conservative, preventative dentistry. They believe in a comprehensive approach to treating patients&rsquo; oral health with the goal of providing healthy smiles that last a lifetime.</p>
+          <p>Together with their associates and a team of hygienists, assistants, and coordinators, they&rsquo;ve built a practice where patients are treated like family. Get to know everyone below.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTORS & TEAM -->
   <section class="doctors" id="doctors">
     <div class="container">
-      <div class="doctors-header reveal">
-        <div class="section-label">Meet the Doctors</div>
-        <h2 class="section-title">A team built on <em>trust</em> and family</h2>
-        <p class="section-text" style="margin-top:1rem;">Drs. Zent are dedicated to providing their patients with the highest quality care by practicing conservative, preventative dentistry. They believe in a comprehensive approach to treating patients&rsquo; oral health with the goal of providing healthy smiles that last a lifetime.</p>
+      <div class="team-tabs reveal" role="tablist" aria-label="Doctors and team">
+        <button class="team-tab" id="tab-doctors" role="tab" aria-selected="true" aria-controls="meet-the-doctors" type="button">Meet the Doctors</button>
+        <button class="team-tab" id="tab-team" role="tab" aria-selected="false" aria-controls="meet-the-team" tabindex="-1" type="button">Meet the Team</button>
       </div>
-      <div class="doctors-grid">
+      <div id="meet-the-doctors" class="team-panel" role="tabpanel" aria-labelledby="tab-doctors" tabindex="0">
+        <div class="doctors-grid">
         <div class="doctor-card featured reveal">
           <div class="doctor-img">
             <img src="https://static.wixstatic.com/media/2b226c_3b399326cc324ff5ab4a5102e6bb7032~mv2.jpg/v1/crop/x_0,y_0,w_2073,h_2487/fill/w_600,h_720,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_4912-Enhanced-NR_edited_edited.jpg" alt="Dr. Stephen A. Zent" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Dr. Stephen A. Zent</h3>
             <div class="credential">DDS &middot; Indiana University School of Dentistry</div>
             <div class="doctor-bio" id="bio-stephen">
@@ -982,11 +1055,12 @@
             <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-stephen"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
-        <div class="doctor-card featured reveal reveal-delay-2">
+        <div class="doctor-card featured reveal">
           <div class="doctor-img">
             <img src="https://static.wixstatic.com/media/2b226c_386847762a1849c8ace4737ce831513d~mv2.jpg/v1/crop/x_0,y_301,w_2000,h_2399/fill/w_600,h_720,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_4918-Enhanced-NR_edited.jpg" alt="Dr. Sheena K. Zent" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Dr. Sheena K. Zent</h3>
             <div class="credential">DDS &middot; Indiana University School of Dentistry</div>
             <div class="doctor-bio" id="bio-sheena">
@@ -999,12 +1073,12 @@
             <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-sheena"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
-
-        <div class="doctor-card reveal">
+        <div class="doctor-card featured reveal">
           <div class="doctor-img">
             <img src="https://static.wixstatic.com/media/2b226c_b2126889aa444ea0a76a6a2fe332bbaa~mv2.jpeg/v1/crop/x_0,y_0,w_506,h_506/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/C4E53322-1BA5-46E3-8763-7C307549602D.jpeg" alt="Dr. Tracy Kelsey" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Dr. Tracy Kelsey</h3>
             <div class="credential">Associate Dentist &middot; DMD</div>
             <div class="doctor-bio" id="bio-kelsey">
@@ -1015,12 +1089,13 @@
             <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-kelsey"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
-        <div class="doctor-card reveal">
+        <div class="doctor-card featured reveal">
           <div class="doctor-img doctor-img-placeholder">
             <img src="assets/logo/2b226c_219e7198a8464dc08dbd784a24859bc6.avif" alt="Dr. Farouk Alshatti (photo coming soon)">
             <div class="photo-soon" aria-hidden="true">Photo Coming Soon</div>
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Dr. Farouk Alshatti</h3>
             <div class="credential">Associate Dentist &middot; DDS</div>
             <div class="doctor-bio" id="bio-alshatti">
@@ -1031,11 +1106,16 @@
             <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-alshatti"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
+        </div>
+      </div>
+      <div id="meet-the-team" class="team-panel" role="tabpanel" aria-labelledby="tab-team" tabindex="0" hidden>
+        <div class="doctors-grid">
         <div class="doctor-card reveal">
           <div class="doctor-img">
             <img src="https://static.wixstatic.com/media/2b226c_ec1a46330e4746cebcc429fd4322bcaf~mv2.jpeg/v1/crop/x_0,y_79,w_683,h_683/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/6939013824919268996.jpeg" alt="Mary-Margaret" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Mary-Margaret</h3>
             <div class="credential">Office Manager</div>
             <div class="doctor-bio" id="bio-marymargaret">
@@ -1046,12 +1126,12 @@
             <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-marymargaret"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
-
         <div class="doctor-card reveal">
           <div class="doctor-img">
             <img src="https://static.wixstatic.com/media/2b226c_d1c181cee09541709cb0ff7b9191962f~mv2.jpg/v1/crop/x_0,y_72,w_3665,h_3666/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_4899-Enhanced-NR.jpg" alt="Maiya" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Maiya</h3>
             <div class="credential">Front Desk Coordinator</div>
             <div class="doctor-bio" id="bio-maiya">
@@ -1065,6 +1145,7 @@
             <img src="https://static.wixstatic.com/media/2b226c_ac14af3fcefa4f5492ae8f086d0771f2~mv2.jpg/v1/crop/x_0,y_74,w_3023,h_3021/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_4890-Enhanced-NR.jpg" alt="Tina" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Tina</h3>
             <div class="credential">Front Desk Coordinator</div>
             <div class="doctor-bio" id="bio-tina">
@@ -1078,6 +1159,7 @@
             <img src="https://static.wixstatic.com/media/2b226c_e34f6f7c75f547c4b38125c0ff829513~mv2.jpg/v1/crop/x_0,y_33,w_1130,h_1132/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/Syds%20Photo.jpg" alt="Sydney" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Sydney</h3>
             <div class="credential">Front Desk Coordinator</div>
             <div class="doctor-bio" id="bio-sydney">
@@ -1086,12 +1168,12 @@
             <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-sydney"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
-
         <div class="doctor-card reveal">
           <div class="doctor-img">
             <img src="https://static.wixstatic.com/media/2b226c_3e28cb4d078f47569c355fe5fc0b9104~mv2.png/v1/crop/x_0,y_0,w_1117,h_1119/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_1306_PNG.png" alt="Jaci" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Jaci</h3>
             <div class="credential">Dental Hygienist</div>
             <div class="doctor-bio" id="bio-jaci">
@@ -1105,6 +1187,7 @@
             <img src="https://static.wixstatic.com/media/2b226c_f0f6a31caa354a1883fdeafbc86b3244~mv2.png/v1/crop/x_33,y_0,w_1033,h_1033/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_1287_PNG.png" alt="Audrey" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Audrey</h3>
             <div class="credential">Dental Hygienist</div>
             <div class="doctor-bio" id="bio-audrey">
@@ -1118,6 +1201,7 @@
             <img src="https://static.wixstatic.com/media/2b226c_0e40ad09a73c4e22add137fd569e8292~mv2.png/v1/crop/x_468,y_0,w_1065,h_1064/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_1275_PNG.png" alt="Lynn" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Lynn</h3>
             <div class="credential">Dental Hygienist</div>
             <div class="doctor-bio" id="bio-lynn">
@@ -1131,6 +1215,7 @@
             <img src="https://static.wixstatic.com/media/2b226c_0a45360f518f4fc39bf30410af34db45~mv2.png/v1/crop/x_58,y_0,w_912,h_911/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_1289_PNG.png" alt="Jaime" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Jaime</h3>
             <div class="credential">Dental Hygienist</div>
             <div class="doctor-bio" id="bio-jaime">
@@ -1144,6 +1229,7 @@
             <img src="https://static.wixstatic.com/media/2b226c_02b7ba5c93894782bdf587ed1e6a62f2~mv2.png/v1/crop/x_0,y_29,w_982,h_976/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_1291_PNG.png" alt="Tracy" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Tracy</h3>
             <div class="credential">Dental Hygienist</div>
             <div class="doctor-bio" id="bio-tracy">
@@ -1153,12 +1239,12 @@
             <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-tracy"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
-
         <div class="doctor-card reveal">
           <div class="doctor-img">
             <img src="https://static.wixstatic.com/media/2b226c_70f431357d424cd88184f5f622c1c5c2~mv2.png/v1/crop/x_0,y_0,w_987,h_988/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_1298_PNG.png" alt="Martha" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Martha</h3>
             <div class="credential">Expanded Functions Dental Assistant</div>
             <div class="doctor-bio" id="bio-martha">
@@ -1172,6 +1258,7 @@
             <img src="https://static.wixstatic.com/media/2b226c_7521625fccf84c57a1ca3f94ec7b8b5f~mv2.png/v1/crop/x_396,y_159,w_1037,h_1035/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_1278_PNG.png" alt="Saleena" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Saleena</h3>
             <div class="credential">Expanded Functions Dental Assistant</div>
             <div class="doctor-bio" id="bio-saleena">
@@ -1185,6 +1272,7 @@
             <img src="https://static.wixstatic.com/media/2b226c_a89689b140564416836bceb1307e6d53~mv2.jpg/v1/crop/x_0,y_0,w_2100,h_2103/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_4929-Enhanced-NR.jpg" alt="Serena" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Serena</h3>
             <div class="credential">Expanded Functions Dental Assistant</div>
             <div class="doctor-bio" id="bio-serena">
@@ -1198,6 +1286,7 @@
             <img src="https://static.wixstatic.com/media/2b226c_a642993b54bf40d7b9fccb85259871e5~mv2.jpg/v1/crop/x_0,y_31,w_3151,h_3147/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_4935-Enhanced-NR.jpg" alt="Bel&eacute;n" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Bel&eacute;n</h3>
             <div class="credential">Expanded Functions Dental Assistant</div>
             <div class="doctor-bio" id="bio-belen">
@@ -1212,6 +1301,7 @@
             <img src="https://static.wixstatic.com/media/2b226c_c9d9c86131954552bc5edc495e443667~mv2.jpg/v1/crop/x_0,y_153,w_3136,h_3140/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/IMG_4904-Enhanced-NR.jpg" alt="Dena" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="doctor-info">
+            <div class="doctor-eyebrow">Get to know</div>
             <h3>Dena</h3>
             <div class="credential">Expanded Functions Dental Assistant</div>
             <div class="doctor-bio" id="bio-dena">
@@ -1219,6 +1309,7 @@
             </div>
             <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-dena"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -1252,19 +1343,21 @@
             <li><a href="our-practice.html">Our Practice</a></li>
             <li><a href="index.html#services">Services</a></li>
             <li><a href="index.html#testimonials">Testimonials</a></li>
-            <li><a href="#">Patient Forms</a></li>
-            <li><a href="#">Pay My Bill</a></li>
+            <li><a href="https://www.zentfamilydentistry.com/forms-1" target="_blank" rel="noopener">Patient Forms</a></li>
+            <li><a href="https://pay.withcherry.com/zent-family-dentistry" target="_blank" rel="noopener">Pay My Bill</a></li>
           </ul>
         </div>
         <div>
           <h3 class="footer-heading">Services</h3>
           <ul class="footer-links">
             <li><a href="services/cleanings-prevention.html">Cleanings &amp; Prevention</a></li>
-            <li><a href="services/cosmetic-dentistry.html">Cosmetic Dentistry</a></li>
-            <li><a href="services/dental-implants.html">Dental Implants</a></li>
+            <li><a href="services/cosmetic-dentistry.html">Cosmetic Dentistry &amp; Botox</a></li>
             <li><a href="services/crowns-fillings.html">Crowns &amp; Fillings</a></li>
+            <li><a href="services/dental-implants.html">Dental Implants</a></li>
             <li><a href="services/clear-aligners.html">Clear Aligners</a></li>
-            <li><a href="services/pediatric-dentistry.html">Pediatric Dentistry</a></li>
+            <li><a href="services/extractions.html">Extractions</a></li>
+            <li><a href="services/root-canals.html">Root Canals</a></li>
+            <li><a href="services/tooth-replacement.html">Tooth Replacement</a></li>
           </ul>
         </div>
         <div>
@@ -1317,6 +1410,39 @@
         }
       });
     }
+
+
+    // Doctors/Team tabs
+    const teamTabs = Array.from(document.querySelectorAll('.team-tab'));
+    function activateTab(tab, focus) {
+      teamTabs.forEach(t => {
+        const sel = t === tab;
+        t.setAttribute('aria-selected', String(sel));
+        t.tabIndex = sel ? 0 : -1;
+        const panel = document.getElementById(t.getAttribute('aria-controls'));
+        if (panel) panel.hidden = !sel;
+      });
+      if (focus) tab.focus();
+    }
+    teamTabs.forEach(tab => {
+      tab.addEventListener('click', () => activateTab(tab, false));
+      tab.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft' || e.key === 'Home' || e.key === 'End') {
+          e.preventDefault();
+          let i = teamTabs.indexOf(document.activeElement);
+          if (e.key === 'ArrowRight') i = (i + 1) % teamTabs.length;
+          else if (e.key === 'ArrowLeft') i = (i - 1 + teamTabs.length) % teamTabs.length;
+          else i = e.key === 'Home' ? 0 : teamTabs.length - 1;
+          activateTab(teamTabs[i], true);
+        }
+      });
+    });
+    function syncTabToHash() {
+      if (location.hash === '#meet-the-team') activateTab(document.getElementById('tab-team'), false);
+      else if (location.hash === '#meet-the-doctors' || location.hash === '#doctors') activateTab(document.getElementById('tab-doctors'), false);
+    }
+    window.addEventListener('hashchange', syncTabToHash);
+    syncTabToHash();
 
     // Expandable team bios
     document.querySelectorAll('.bio-toggle').forEach(btn => {
