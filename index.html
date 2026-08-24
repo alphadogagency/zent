@@ -48,6 +48,25 @@
       padding-right: 5rem;
     }
 
+    /* ===== ANNOUNCEMENT BAR ===== */
+    .announcement-bar {
+      position: relative;
+      z-index: 110;
+      background: var(--sage-deep);
+      color: #fff;
+      text-align: center;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.01em;
+    }
+    .announcement-bar a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .announcement-bar a:hover { text-decoration-thickness: 2px; }
+
     /* ===== NAV ===== */
     .nav {
       position: fixed;
@@ -1281,6 +1300,7 @@
       .services-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 900px) {
+      .announcement-bar { font-size: 0.83rem; padding: 0.6rem 1rem; }
       .nav {
         padding: 0.85rem 1.25rem;
         background: rgba(255,255,255,0.97);
@@ -1492,6 +1512,11 @@
 <body>
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ANNOUNCEMENT -->
+  <div class="announcement-bar" id="announcement-bar">
+    <p>We are excited to welcome Dr.&nbsp;Alshatti to our practice! <a href="our-practice.html#dr-alshatti">Learn more about him here</a>.</p>
+  </div>
 
   <!-- NAV -->
   <nav class="nav" id="nav">
@@ -2078,11 +2103,20 @@
       });
     })();
 
-    // Scroll-based nav styling
+    // Scroll-based nav styling; nav starts below the announcement bar and
+    // slides up to the top edge as the bar scrolls away
     const nav = document.getElementById('nav');
+    const announcementBar = document.getElementById('announcement-bar');
+    function positionNav() {
+      const h = announcementBar ? announcementBar.offsetHeight : 0;
+      nav.style.top = Math.max(0, h - window.scrollY) + 'px';
+    }
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 50);
+      positionNav();
     });
+    window.addEventListener('resize', positionNav);
+    positionNav();
 
     // Mobile nav toggle
     const navToggle = document.getElementById('navToggle');

@@ -589,7 +589,7 @@
       color: var(--text-light);
       margin-bottom: 0.3rem;
     }
-    .doctors, #meet-the-doctors, #meet-the-team { scroll-margin-top: 110px; }
+    .doctors, #meet-the-doctors, #meet-the-team, #dr-alshatti { scroll-margin-top: 110px; }
 
     /* Stagger children */
     .stagger-children > * {
@@ -1114,7 +1114,7 @@
             <button class="bio-toggle" type="button" aria-expanded="false" aria-controls="bio-kelsey"><span>See more</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
           </div>
         </div>
-        <div class="doctor-card featured reveal">
+        <div class="doctor-card featured reveal" id="dr-alshatti">
           <div class="doctor-img doctor-img-placeholder">
             <img src="assets/logo/2b226c_219e7198a8464dc08dbd784a24859bc6.avif" alt="Dr. Farouk Alshatti (photo coming soon)">
             <div class="photo-soon" aria-hidden="true">Photo Coming Soon</div>
@@ -1471,6 +1471,11 @@
     function syncTabToHash() {
       if (location.hash === '#meet-the-team') activateTab(document.getElementById('tab-team'), false);
       else if (location.hash === '#meet-the-doctors' || location.hash === '#doctors') activateTab(document.getElementById('tab-doctors'), false);
+      else if (location.hash === '#dr-alshatti') {
+        activateTab(document.getElementById('tab-doctors'), false);
+        const card = document.getElementById('dr-alshatti');
+        if (card) requestAnimationFrame(() => card.scrollIntoView());
+      }
     }
     window.addEventListener('hashchange', syncTabToHash);
     syncTabToHash();
