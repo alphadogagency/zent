@@ -7,7 +7,7 @@
   <meta name="description" content="Zent Family Dentistry in South Bend, Indiana. A family dental practice devoted to restoring and enhancing the natural beauty of your smile using conservative, state-of-the-art procedures. Now accepting new patients.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -221,9 +221,20 @@
       color: var(--text-dark);
       letter-spacing: -0.02em;
     }
+    .hero h1 .hero-brand {
+      display: block;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: clamp(2.2rem, 4.3vw, 3.9rem);
+      text-transform: uppercase;
+      letter-spacing: 0.015em;
+      line-height: 1.06;
+      margin-bottom: 0.45rem;
+    }
     .hero h1 em {
       font-style: italic;
       color: var(--sage-deep);
+      font-size: clamp(1.3rem, 2.2vw, 2rem);
     }
     .hero-text {
       font-size: 1.05rem;
@@ -1375,6 +1386,8 @@
       .hero-top { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem 1.5rem; gap: 1.5rem; }
       .hero-headline { max-width: 100%; }
       .hero h1 { font-size: clamp(1.65rem, 6.5vw, 2.3rem); }
+      .hero h1 .hero-brand { font-size: clamp(1.9rem, 7.5vw, 2.7rem); }
+      .hero h1 em { font-size: clamp(1.15rem, 4.5vw, 1.5rem); }
       .hero-text { font-size: 1rem; line-height: 1.65; margin-bottom: 1.5rem; }
       .hero-right { max-width: 100%; padding-bottom: 0; }
       .hero-actions { flex-wrap: wrap; gap: 0.75rem; width: 100%; }
@@ -1440,6 +1453,8 @@
       .nav-logo-img { height: 48px; }
       .hero-top { padding: 1.5rem 1.25rem 1.25rem; }
       .hero h1 { font-size: 1.65rem; line-height: 1.18; }
+      .hero h1 .hero-brand { font-size: 1.9rem; }
+      .hero h1 em { font-size: 1.15rem; }
       .hero-image { margin: 0 1.25rem; aspect-ratio: 4/3; }
       .hero-float-card { right: 0.6rem; bottom: 0.6rem; padding: 0.6rem 0.85rem; }
       .hero-float-card .rating-num { font-size: 1.05rem; }
@@ -1526,7 +1541,7 @@
       <li class="nav-dropdown">
         <a href="our-practice.html">Our Practice <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></a>
         <div class="dropdown-menu">
-          <a href="our-practice.html#meet-the-doctors">Meet the Doctors</a>
+          <a href="our-practice.html#about">Meet the Doctors</a>
           <a href="our-practice.html#meet-the-team">Meet the Team</a>
         </div>
       </li>
@@ -1558,7 +1573,7 @@
   <section class="hero">
     <div class="hero-top">
       <div class="hero-headline">
-        <h1>Zent Family Dentistry <em>&mdash; South Bend Dentist</em></h1>
+        <h1><span class="hero-brand">Zent Family Dentistry</span> <em>South Bend Dentist</em></h1>
         <div class="hero-badge">New Patients Welcome</div>
       </div>
       <div class="hero-right">
