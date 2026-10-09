@@ -2,3 +2,31 @@
 /services/botox-tmj /services/cosmetic-dentistry 301
 /services/root-canals-extractions.html /services/extractions.html 301
 /services/root-canals-extractions /services/extractions 301
+
+# Old Wix site URLs → new site (SEO preservation at domain cutover)
+/meet-the-doctors /our-practice 301
+/meet-the-team /our-practice#meet-the-team 301
+/preventative-cleaning /services/cleanings-prevention 301
+/cosmetics /services/cosmetic-dentistry 301
+/botox-filters-for-cosmetics-tmj-pain /services/cosmetic-dentistry 301
+/before-after-1 /services/cosmetic-dentistry 301
+/crowns-fillings /services/crowns-fillings 301
+/clear-aligner-orthodontics /services/clear-aligners 301
+/extractions-root-canals /services/extractions 301
+/make-an-appointment /#appointment 301
+/copy-of-request-appt /#appointment 301
+/testimonials /#testimonials 301
+/forms-1 https://app.operadds.com/Forms/SetForm?cfId=41e6fba2-3664-4733-ada9-228aefe0bce7 302
+/pediatrics / 301
+/procedures / 301
+/procedures-1 / 301
+/procedures-answers-1 / 301
+/procedures-answers-2 / 301
+/procedures-answers-3 / 301
+/procedures-answers-4 / 301
+/faq-clzj / 301
+/faq-ct64 / 301
+/links / 301
+/educational / 301
+/coming-soon-01 / 301
+/_files/ugd/c75cc2_ae7bf0b509d04f88bc3d278e8fec75f6.pdf /files/post-op-surgical-instructions.pdf 301
