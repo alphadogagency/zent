@@ -1,8 +1,10 @@
 # Make-an-appointment landing page
 
 The standalone paid-search page is `make-an-appointment.html`, served at
-`/ppc/make-an-appointment` through the 200 rule in `_redirects`. The browser URL
-and its gclid/UTM parameters remain intact. It is marked `noindex, follow`, is
+`/ppc/make-an-appointment` by Cloudflare Pages' built-in HTML route matching.
+Do not add a rewrite back to the `.html` file: Cloudflare redirects that file to
+the clean URL, causing a loop. The browser URL and its gclid/UTM parameters
+remain intact. The page is marked `noindex, follow`, is
 not added to the organic sitemap, and is allowed by the existing robots.txt.
 
 ## Content and assets
@@ -70,8 +72,8 @@ in `window.dataLayer`.
 
 No build or dependency installation is needed for the website. From the
 repository root, run `python3 -m http.server 4173` and visit
-`http://localhost:4173/ppc/make-an-appointment.html`. A static host that supports
-`_redirects` serves the extensionless production URL.
+`http://localhost:4173/ppc/make-an-appointment.html`. Cloudflare Pages serves the
+extensionless production URL automatically.
 
 Checks performed on 2026-10-14:
 
@@ -90,4 +92,5 @@ Checks performed on 2026-10-14:
   production audit after approval to include hosting and Google's live scripts.
   Field INP and actual Google Ads conversion attribution require real visits.
 
-This page is committed for review only. Publishing requires the user's approval.
+The user approved publication on 2026-10-14. Cloudflare Pages automatically
+deploys changes pushed to `main`.

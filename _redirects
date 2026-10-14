@@ -1,6 +1,3 @@
-# Paid-search landing page: serve in place so gclid and UTM parameters stay in the URL.
-/ppc/make-an-appointment /ppc/make-an-appointment.html 200
-
 /services/botox-tmj.html /services/cosmetic-dentistry.html 301
 /services/botox-tmj /services/cosmetic-dentistry 301
 /services/root-canals-extractions.html /services/extractions.html 301
