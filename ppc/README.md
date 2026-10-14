@@ -9,8 +9,9 @@ not added to the organic sitemap, and is allowed by the existing robots.txt.
 
 ## Content and assets
 
-- All 11 sections from the supplied brief are included, with 15 phone links and
-  unique `data-cta-location` values. There are no forms, booking widgets, site
+- The landing page includes 14 phone links with unique `data-cta-location`
+  values. The dedicated insurance and financing section was removed at the
+  client's request on 2026-10-14. There are no forms, booking widgets, site
   navigation, or links from the logo.
 - The four reviews are verbatim from the supplied brief. No aggregate rating,
   review count, extra offers, or after-hours voicemail claims were added.
@@ -85,7 +86,7 @@ Checks performed on 2026-10-14:
 - Accessible review/FAQ disclosures, click-to-load map, JavaScript-disabled call
   links, and Indianapolis business hours (including a closed Friday) checked.
 - All four reviews match the brief, all eight FAQ answers match JSON-LD, and
-  all 15 phone links queue an event with a distinct placement.
+  all phone links queue an event with a distinct placement.
 - Local Lighthouse mobile: Performance 99, Accessibility 100, Best Practices
   100; LCP 2.2 seconds, CLS 0, TBT 30ms, initial transfer 246 KiB.
 - Scores describe the local preview with remote marketing tags disabled. Run a
