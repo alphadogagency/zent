@@ -30,3 +30,7 @@
 /educational / 301
 /coming-soon-01 / 301
 /_files/ugd/c75cc2_ae7bf0b509d04f88bc3d278e8fec75f6.pdf /files/post-op-surgical-instructions.pdf 301
+
+# Policy PDFs replaced by HTML pages (10DLC partner requirement)
+/files/privacy-policy.pdf /privacy-policy 301
+/files/sms-terms-of-service.pdf /terms-of-service 301
