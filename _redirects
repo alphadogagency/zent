@@ -34,3 +34,7 @@
 # Policy PDFs replaced by HTML pages (10DLC partner requirement)
 /files/privacy-policy.pdf /privacy-policy 301
 /files/sms-terms-of-service.pdf /terms-of-service 301
+
+# Heal the bad cleanings URL crawlers already discovered
+/services/cleanings.html /services/cleanings-prevention 301
+/services/cleanings /services/cleanings-prevention 301
