@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Careers at Zent Family Dentistry</title>
   <link rel="canonical" href="https://www.zentfamilydentistry.com/careers">
-  <meta name="description" content="Careers at Zent Family Dentistry in South Bend, Indiana. Open positions and our team culture — coming soon. Send us your resume today.">
+  <meta name="description" content="Careers at Zent Family Dentistry in South Bend, Indiana. Now hiring an Expanded Functions Dental Assistant — apply on Indeed or send us your resume today.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -212,7 +212,7 @@
       font-weight: 300;
       margin-bottom: 1.2rem;
     }
-    .no-openings {
+    .opening-card {
       display: flex;
       align-items: flex-start;
       gap: 1rem;
@@ -222,7 +222,7 @@
       padding: 1.5rem 1.75rem;
       margin: 0.5rem 0 2rem;
     }
-    .no-openings svg {
+    .opening-card svg {
       flex-shrink: 0;
       width: 24px;
       height: 24px;
@@ -233,18 +233,38 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-    .no-openings strong {
+    .opening-card strong {
       display: block;
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: #33688a;
       margin-bottom: 0.25rem;
     }
-    .no-openings span {
+    .opening-card span {
+      display: block;
       font-size: 0.95rem;
       font-weight: 300;
       line-height: 1.6;
       color: var(--text-mid);
+    }
+    .opening-card .apply-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.9rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #33688a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color .2s;
+    }
+    .opening-card .apply-link:hover { color: var(--sage-deep); text-decoration-thickness: 2px; }
+    .opening-card .apply-link svg {
+      width: 14px;
+      height: 14px;
+      margin-top: 0;
+      stroke: currentColor;
     }
     .coming-soon .email-cta {
       display: inline-flex;
@@ -530,20 +550,24 @@
     - Form submissions go to doctors@zentfamilydentistry.com AND om@zentfamilydentistry.com
   -->
 
-  <!-- COMING SOON -->
+  <!-- OPEN POSITIONS -->
   <section class="coming-soon">
     <div class="container">
       <div class="coming-soon-inner reveal">
-        <span class="section-label">Coming Soon</span>
+        <span class="section-label">Now Hiring</span>
         <h2>Careers at <em>Zent Family Dentistry</em></h2>
-        <div class="no-openings">
+        <div class="opening-card">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
           <div>
-            <strong>No positions are currently available.</strong>
-            <span>New openings will be posted right here as they become available.</span>
+            <strong>Expanded Functions Dental Assistant</strong>
+            <span>We&rsquo;re currently hiring an Expanded Functions Dental Assistant (2+ years of experience required). Read the full job description and apply on Indeed.</span>
+            <a class="apply-link" href="https://www.indeed.com/job/expanded-functions-dental-assistant-2-years-experience-required-acad8e4cc6830c88" target="_blank" rel="noopener">
+              View the Job &amp; Apply on Indeed
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
           </div>
         </div>
-        <p>Think you&rsquo;d be a great fit at Zent Family Dentistry? We&rsquo;d still love to hear from you.</p>
+        <p>Not the right fit for you? We&rsquo;d still love to hear from you.</p>
         <a class="email-cta" href="mailto:doctors@zentfamilydentistry.com?cc=om@zentfamilydentistry.com&amp;subject=Career%20Inquiry%20%E2%80%94%20Zent%20Family%20Dentistry">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Email Us Your Resume
